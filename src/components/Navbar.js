@@ -1,4 +1,4 @@
-import { Navlink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
         <ul>
           {links.map((link) => (
             <li key={link.id}>
-              <Navlink to={link.path}>{link.name}</Navlink>
+              <NavLink to={link.path}>{link.name}</NavLink>
             </li>
           ))}
         </ul>
