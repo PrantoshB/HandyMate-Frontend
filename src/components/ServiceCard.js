@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+const ServiceCard = ({ name }) => (
+  <div>
+    <h1>{name}</h1>
+  </div>
+);
 
-const ServiceCard = (props) => {
-  return (
-    <div>
-        <h1>{props.name}</h1>
-    </div>
-  )
-}
+export default ServiceCard;
 
-export default ServiceCard
+ServiceCard.propTypes = {
+  name: PropTypes.string.isRequired,
+};
