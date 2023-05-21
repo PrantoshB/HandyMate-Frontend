@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ReservationCard = ({
-  startDate, endDate, userId, serviceName,
+  startDate, endDate, userId, serviceName, locationName,
 }) => (
   <div style={{ border: '1px solid black', borderRadius: '4px', padding: '16px' }}>
     <h1>
@@ -27,6 +27,11 @@ const ReservationCard = ({
       {' '}
       {endDate}
     </h2>
+    <h2>
+      Location:
+      {' '}
+      {locationName}
+    </h2>
     <button type="button">Cancel Reservation</button>
   </div>
 );
@@ -34,8 +39,9 @@ const ReservationCard = ({
 export default ReservationCard;
 
 ReservationCard.propTypes = {
-  startDate: PropTypes.number.isRequired,
-  endDate: PropTypes.number.isRequired,
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
   userId: PropTypes.number.isRequired,
   serviceName: PropTypes.string.isRequired,
+  locationName: PropTypes.string.isRequired,
 };

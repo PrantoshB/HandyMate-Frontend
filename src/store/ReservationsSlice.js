@@ -13,11 +13,14 @@ const reservationSlice = createSlice(
       setReservations(state, action) {
         state.reservations = action.payload;
       },
+      addReservation(state, action) {
+        state.reservations.push(action.payload);
+      },
     },
   },
 );
 
-export const { setReservations } = reservationSlice.actions;
+export const { setReservations, addReservation } = reservationSlice.actions;
 
 export default reservationSlice.reducer;
 
@@ -27,4 +30,16 @@ const fetchReservations = () => async (dispatch) => {
   dispatch(setReservations(data));
 };
 
-export { fetchReservations };
+const createReservation = (reservationData) => async (dispatch) => {
+  const response = await fetch('http://localhost:3000/api/v1/reservations', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(reservationData),
+  });
+  const data = await response.json();
+  dispatch(addReservation(data));
+};
+
+export { fetchReservations, createReservation };
