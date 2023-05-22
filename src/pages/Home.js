@@ -22,7 +22,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div style={StyleGreed}>
+    <div style={StyleGreed}>j
       {
             cards.map((card) => (
               <ServiceCard
