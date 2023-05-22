@@ -11,12 +11,13 @@ const servicesSlice = createSlice(
     reducers: {
       setServices(state, action) {
         state.services = action.payload;
-      },
+      }
     },
   },
 );
 
 export const { setServices } = servicesSlice.actions;
+
 
 export default servicesSlice.reducer;
 
@@ -26,4 +27,17 @@ const fetchServices = () => async (dispatch) => {
   dispatch(setServices(data));
 };
 
+const addService = (service) => async (dispatch) => {
+  const response = await fetch('http://localhost:3000/api/v1/services', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(service),
+  });
+  const data = await response.json();
+  dispatch(setServices(data));
+};
+
 export { fetchServices };
+export { addService };
