@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ReservationCard = ({
-  startDate, endDate, userId, serviceName, locationName,
+  startDate, endDate, userName, serviceName, locationName,
 }) => (
   <div style={{ border: '1px solid black', borderRadius: '4px', padding: '16px' }}>
     <h1>
@@ -13,9 +13,8 @@ const ReservationCard = ({
     <h2>
       Reserved for:
       {' '}
-      User
-      {' '}
-      {userId}
+
+      {userName}
     </h2>
     <h2>
       Start Date:
@@ -41,7 +40,7 @@ export default ReservationCard;
 ReservationCard.propTypes = {
   startDate: PropTypes.string.isRequired,
   endDate: PropTypes.string.isRequired,
-  userId: PropTypes.number.isRequired,
+  userName: PropTypes.string.isRequired,
   serviceName: PropTypes.string.isRequired,
   locationName: PropTypes.string.isRequired,
 };
