@@ -27,7 +27,7 @@ const fetchServices = () => async (dispatch) => {
 };
 
 const addService = (service) => async (dispatch) => {
-  const response = await fetch('http://localhost:3000/api/v1/services', {
+  await fetch('http://localhost:3000/api/v1/services', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
