@@ -34,9 +34,7 @@ const addService = (service) => async (dispatch) => {
     },
     body: JSON.stringify(service),
   });
-  const data = await response.json();
-  dispatch(setServices(data));
+  dispatch(fetchServices());
 };
 
-export { fetchServices };
-export { addService };
+export { fetchServices, addService };
