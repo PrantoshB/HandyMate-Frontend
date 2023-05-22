@@ -11,13 +11,12 @@ const servicesSlice = createSlice(
     reducers: {
       setServices(state, action) {
         state.services = action.payload;
-      }
+      },
     },
   },
 );
 
 export const { setServices } = servicesSlice.actions;
-
 
 export default servicesSlice.reducer;
 
