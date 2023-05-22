@@ -26,4 +26,15 @@ const fetchServices = () => async (dispatch) => {
   dispatch(setServices(data));
 };
 
-export { fetchServices };
+const addService = (service) => async (dispatch) => {
+  await fetch('http://localhost:3000/api/v1/services', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(service),
+  });
+  dispatch(fetchServices());
+};
+
+export { fetchServices, addService };
