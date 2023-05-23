@@ -47,7 +47,7 @@ const AddService = () => {
         setUploadProgress(progress);
       },
       (error) => {
-        setErrorMessage('Error uploading file. Please try again.');
+        setErrorMessage(error.message);
         setIsUploading(false);
       },
       () => {
@@ -67,7 +67,7 @@ const AddService = () => {
           setUploadSuccess(true);
           navigate('/');
         });
-      }
+      },
     );
   };
 
@@ -83,7 +83,11 @@ const AddService = () => {
 
       {isUploading && (
         <div>
-          <p>Uploading: {uploadProgress}%</p>
+          <p>
+            Uploading:
+            {uploadProgress}
+            %
+          </p>
         </div>
       )}
 

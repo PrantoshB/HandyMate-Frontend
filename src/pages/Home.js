@@ -12,13 +12,14 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div style={StyleGreed}>
+    <div>
       {
             cards.map((card) => (
               <ServiceCard
-              key={card.id}
-              name={card.name} 
-              image={card.image} />
+                key={card.id}
+                name={card.name}
+                image={card.image}
+              />
             ))
         }
     </div>
@@ -26,10 +27,3 @@ const Home = () => {
 };
 
 export default Home;
-
-const StyleGreed = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gridGap: '1rem',
-  marginTop: '1rem',
-};
