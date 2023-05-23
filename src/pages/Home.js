@@ -15,7 +15,11 @@ const Home = () => {
     <div>
       {
             cards.map((card) => (
-              <ServiceCard name={card.name} key={card.id} />
+              <ServiceCard
+                key={card.id}
+                name={card.name}
+                image={card.image}
+              />
             ))
         }
     </div>
