@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchServices());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
