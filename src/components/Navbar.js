@@ -11,16 +11,19 @@ const Navbar = () => {
   ];
   return (
     <header>
-      <nav>
-        <img src={logo} height={100} width={100} alt="logo" />
-        <ul>
+      <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ width: '280px' }}>
+        <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src={logo} height={100} width={100} alt="logo" />
+        </a>
+        <hr />
+        <ul className="nav nav-pills flex-column mb-auto">
           {links.map((link) => (
-            <li key={link.id}>
-              <NavLink to={link.path}>{link.name}</NavLink>
+            <li key={link.id} className="nav-item">
+              <NavLink className="nav-link" to={link.path}>{link.name}</NavLink>
             </li>
           ))}
         </ul>
-      </nav>
+      </div>
     </header>
   );
 };
