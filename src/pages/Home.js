@@ -19,6 +19,7 @@ const Home = () => {
                 key={card.id}
                 name={card.name}
                 image={card.image}
+                details={card.details}
               />
             ))
         }
