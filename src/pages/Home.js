@@ -21,7 +21,7 @@ const Home = () => {
   const isMobile = window.innerWidth <= 768;
   return (
     <div
-      className="col-md-8"
+      className="col-md-10 carousel-container"
       style={{
         minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
       }}
