@@ -1,9 +1,5 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-.service-list {
-  max-width: 100vw;
-}
-
 .slide {
   height: 300px;
   display: flex;
@@ -14,4 +10,8 @@
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.service-list {
+  max-width: 100vw;
 }
