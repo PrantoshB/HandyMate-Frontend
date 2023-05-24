@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/handymate.png';
 
 const Navbar = () => {
   const links = [
@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <header>
       <nav>
-        <img src={logo} height={100} width={100} alt="logo" />
+        <img src={logo} alt="logo" />
         <ul>
           {links.map((link) => (
             <li key={link.id}>
