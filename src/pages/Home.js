@@ -14,15 +14,16 @@ const Home = () => {
   return (
     <div>
       {
-            cards.map((card) => (
-              <ServiceCard
-                key={card.id}
-                name={card.name}
-                image={card.image}
-                details={card.details}
-              />
-            ))
-        }
+        cards.map((card) => (
+          <ServiceCard
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            image={card.image}
+            details={card.details}
+          />
+        ))
+      }
     </div>
   );
 };
