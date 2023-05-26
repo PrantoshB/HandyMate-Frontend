@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/handymate.png';
+import logo from '../assests/images/hanymate-logo.png';
 
 const Navbar = () => {
   const links = [
