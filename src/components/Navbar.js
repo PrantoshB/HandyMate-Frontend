@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../assests/images/hanymate-logo.png';
+import logo from '../assets/images/hanymate-logo.png';
 
 const Navbar = () => {
   const links = [
@@ -10,18 +10,21 @@ const Navbar = () => {
     { id: 5, name: 'Delete Service', path: '/' },
   ];
   return (
-    <header>
-      <nav>
-        <img src={logo} alt="logo" />
-        <ul>
+    <aside className="main-nav col-md-2">
+      <div className="d-flex flex-column flex-shrink-0 p-3 bg-light">
+        <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img src={logo} className="site-logo" alt="logo" />
+        </a>
+        <hr />
+        <ul className="nav nav-pills flex-column mb-auto">
           {links.map((link) => (
-            <li key={link.id}>
-              <NavLink to={link.path}>{link.name}</NavLink>
+            <li key={link.id} className="nav-item">
+              <NavLink className="nav-link" to={link.path}>{link.name}</NavLink>
             </li>
           ))}
         </ul>
-      </nav>
-    </header>
+      </div>
+    </aside>
   );
 };
 
