@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ServiceCard = ({ name, image, details }) => (
-  <div>
+  <div className="slide">
     <img src={image} alt={name} />
     <h1>{name}</h1>
     <p>{details}</p>

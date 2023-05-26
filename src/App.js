@@ -9,7 +9,7 @@ import AddService from './pages/AddService';
 import Navbar from './components/Navbar';
 
 const App = () => (
-  <>
+  <div className="container d-flex">
     <BrowserRouter>
       <Navbar />
       <Routes>
@@ -21,7 +21,7 @@ const App = () => (
         <Route path="/add-service" element={<AddService />} />
       </Routes>
     </BrowserRouter>
-  </>
+  </div>
 );
 
 export default App;
