@@ -68,37 +68,41 @@ const ReservationForm = () => {
             </label>
             <label htmlFor="locationId">
 
-              <select
-                className="p-2"
-                value={locationId}
-                onChange={(e) => setLocationId(e.target.value)}
-                name="locationId"
-              >
-                <option value="">Select a location</option>
-                {locations.map((location) => (
-                  <option key={location.id} value={location.id}>
-                    {location.name}
-                  </option>
-                ))}
-              </select>
+              <div className="select-wrapper">
+                <select
+                  className="p-2 px-0"
+                  value={locationId}
+                  onChange={(e) => setLocationId(e.target.value)}
+                  name="locationId"
+                >
+                  <option value="">Select a location</option>
+                  {locations.map((location) => (
+                    <option key={location.id} value={location.id}>
+                      {location.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </label>
           </div>
           <div className="d-flex align-items-center g-4">
             <label htmlFor="serviceId">
 
-              <select
-                className="p-2"
-                value={serviceId}
-                onChange={(e) => setServiceId(e.target.value)}
-                name="serviceId"
-              >
-                <option value="">Select a service</option>
-                {services.map((service) => (
-                  <option key={service.id} value={service.id}>
-                    {service.name}
-                  </option>
-                ))}
-              </select>
+              <div className="select-wrapper">
+                <select
+                  className="p-2 px-0"
+                  value={serviceId}
+                  onChange={(e) => setServiceId(e.target.value)}
+                  name="serviceId"
+                >
+                  <option value="">Select a service</option>
+                  {services.map((service) => (
+                    <option key={service.id} value={service.id}>
+                      {service.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </label>
             <label htmlFor="startDate">
               From:&nbsp;

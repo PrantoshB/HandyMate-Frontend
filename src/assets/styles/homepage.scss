@@ -1,0 +1,137 @@
+@mixin swiper-arrow($border-radius) {
+  background: var(--primary-color);
+  width: 110px;
+  height: 65px;
+  border-radius: $border-radius;
+  position: fixed;
+  top: 50%;
+  background-repeat: no-repeat;
+  background-size: 25px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.singlecard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+
+  img {
+    width: 80%;
+  }
+}
+
+.service-list {
+  padding: 3rem 0;
+}
+
+.bold-font {
+  font-weight: 700;
+}
+
+.gray-font {
+  color: #575756;
+}
+
+.dash {
+  border: 1px dashed gray;
+  width: 40%;
+  margin: 3% 0;
+}
+
+.home-dash {
+  width: 10%;
+  margin: 2% 0;
+}
+
+.swiper-button-prev {
+  @include swiper-arrow(0% 25% 25% 0% / 50% 50% 50% 50%);
+
+  left: 17%;
+  background-image: url(../images/left.png);
+  background-position: 80% 50%;
+}
+
+.swiper-button-next {
+  @include swiper-arrow(25% 0 0 25% / 50% 50% 50% 50%);
+
+  right: 0;
+  background-image: url(../images/right.png);
+  background-position: 20% 50%;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 1;
+  pointer-events: none;
+  background-color: #efefef;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.react-multi-carousel-track {
+  li {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+}
+
+i {
+  color: #575756;
+}
+
+.service-rating-price {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3%;
+}
+
+.service-circle-splitter {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  background-color: #575756;
+}
+
+.fa-star-half-stroke {
+  color: green;
+}
+
+.fa-dollar-sign {
+  color: #be710c;
+}
+
+.service-name {
+  margin-top: -5%;
+}
+
+.service-details {
+  margin-top: 4%;
+  text-align: justify;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.homepage-heading {
+  margin-top: 4%;
+}

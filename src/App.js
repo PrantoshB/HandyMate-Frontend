@@ -9,7 +9,7 @@ import AddService from './pages/AddService';
 import Navbar from './components/Navbar';
 
 const App = () => (
-  <div className="container-fluid d-flex">
+  <div className="container-fluid-fluid col-md-12 d-flex">
     <BrowserRouter>
       <Navbar />
       <Routes>

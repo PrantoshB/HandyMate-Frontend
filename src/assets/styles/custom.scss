@@ -1,5 +1,17 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./reservation.scss";
+@import "./homepage.scss";
+
+:root {
+  --primary-color: #98bf11;
+  --gray-color-font: #adadaf;
+  --gray-color: #efefef;
+}
+
+#root {
+  font-family: sans-serif;
+}
+
 .site-logo {
   width: 100%;
   padding: 1rem;

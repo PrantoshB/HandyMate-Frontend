@@ -1,3 +1,4 @@
+$primary: #98bf11;
 .reservation-list {
   display: flex;
   flex-direction: column;
@@ -23,7 +24,7 @@
 }
 
 .reservation-form-overlay {
-  background-color: rgba(9, 226, 9, 0.857);
+  background-color: rgba($primary, 0.7);
   height: 100%;
   .heading {
     letter-spacing: 8px;
@@ -40,16 +41,35 @@
   }
   button[type="submit"],
   input,
-  select {
+  .select-wrapper {
     border-radius: 50px;
   }
   input,
-  select {
+  .select-wrapper {
     background-color: rgba(255, 255, 255, 0.175);
     border: 2px solid white;
     color: white;
+    padding: 0 0 0 16px;
+  }
+  .select-wrapper {
+    &::after {
+      content: "⌄";
+      position: relative;
+      padding-right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-size: 24px;
+      line-height: 1;
+    }
   }
   select {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
     option {
       color: black;
     }
