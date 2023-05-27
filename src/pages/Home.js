@@ -36,6 +36,7 @@ const Home = () => {
             <ServiceCard
               key={card.id}
               name={card.name}
+              id={card.id}
               image={card.image}
               details={card.details}
             />

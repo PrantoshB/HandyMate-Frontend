@@ -13,6 +13,7 @@ const AddService = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [duration, setDuration] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ const AddService = () => {
             price,
             image: downloadURL,
             details,
+            duration,
           };
           dispatch(addService(newService));
           setName('');
@@ -78,6 +80,7 @@ const AddService = () => {
         <input type="float" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
         <input type="file" placeholder="Image" onChange={handleFileChange} />
         <input type="textarea" placeholder="Details" value={details} onChange={(e) => setDetails(e.target.value)} />
+        <input type="number" placeholder="Duration in hours" value={duration} onChange={(e) => setDuration(e.target.value)} />
       </div>
       <button type="button" onClick={handleAddClick}>Add Service</button>
 
