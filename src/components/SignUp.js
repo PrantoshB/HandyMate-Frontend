@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/images/hanymate-logo.png'
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -36,8 +37,11 @@ const SignUp = () => {
   };
 
   return (
-    <form onSubmit={handleSignup}>
+    <section class="signup-bg-image">
+    <form onSubmit={handleSignup} class='sign-form'>
+      <img src={logo} alt="logo" class="logo"/>
       <input
+        class='sign-form__input'
         type="text"
         placeholder="Full Name"
         name="fullName"
@@ -45,6 +49,7 @@ const SignUp = () => {
         onChange={handleChange}
       />
       <input
+        class='sign-form__input'
         type="email"
         placeholder="Email"
         name="email"
@@ -52,6 +57,7 @@ const SignUp = () => {
         onChange={handleChange}
       />
       <input
+        class='sign-form__input'
         type="password"
         placeholder="Password"
         name="password"
@@ -59,14 +65,20 @@ const SignUp = () => {
         onChange={handleChange}
       />
       <input
+        class='sign-form__input'
         type="text"
         placeholder="Role"
         name="role"
         value={formData.role}
         onChange={handleChange}
       />
-      <button type="submit">Sign Up</button>
+      <button 
+      type="submit"
+      class='btn submit-btn'>
+        Sign Up
+      </button>
     </form>
+    </section>
   );
 };
 
