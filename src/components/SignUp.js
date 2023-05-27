@@ -1,78 +1,72 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
-  const [state, setState] = useState({
-    username: '',
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    fullName: '',
     email: '',
     password: '',
-    confirmPassword: '',
+    role: 'user',
   });
 
-  const [error, setError] = useState('');
-
   const handleChange = (e) => {
-    setState((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSignin = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    const {
-      username, email, password, confirmPassword,
-    } = state;
-    if (username.length === 0 || email.length || password.length === 0
-       || confirmPassword.length === 0) {
-      setError('Please enter valid username and password');
-    } else if (password !== confirmPassword) {
-      setError('Passwords do not match');
-    } else {
-      setError('');
+    try {
+      const response = await axios.post('http://localhost:3000/signup', {
+        user: {
+          full_name: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+          role: formData.role,
+        },
+      });
+      // Handle successful signup
+      console.log(response.data);
+      navigate('/');
+    } catch (error) {
+      // Handle signup error
+      console.error(error);
     }
   };
 
   return (
-    <section className="container">
-      <div className="signup">
-        <h1>Sign Up</h1>
-        <form className="form">
-          <div className="form-group">
-            <label htmlFor="username">
-              Username:
-              <input type="text" name="username" className="form-control" id="username" placeholder="Enter username" onChange={handleChange} />
-            </label>
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">
-              Email:
-              <input type="email" name="email" className="form-control" id="email" placeholder="Enter email" onChange={handleChange} />
-            </label>
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">
-              Password:
-              <input type="password" name="password" className="form-control" id="password" placeholder="Enter password" onChange={handleChange} />
-            </label>
-          </div>
-          <div className="form-group">
-            <label htmlFor="confirmPassword">
-              Confirm Password:
-              <input type="password" name="confirmPassword" className="form-control" id="confirmPassword" placeholder="Confirm password" onChange={handleChange} />
-            </label>
-          </div>
-          <button type="submit" className="btn" onClick={handleSignin}>Sign Up</button>
-        </form>
-        <div>
-          <p>
-            Already have an account?
-            <Link to="/signin">Sign In</Link>
-          </p>
-          {error === false && <p>Please enter valid username and password</p>}
-        </div>
-      </div>
-    </section>
+    <form onSubmit={handleSignup}>
+      <input
+        type="text"
+        placeholder="Full Name"
+        name="fullName"
+        value={formData.fullName}
+        onChange={handleChange}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        placeholder="Role"
+        name="role"
+        value={formData.role}
+        onChange={handleChange}
+      />
+      <button type="submit">Sign Up</button>
+    </form>
   );
 };
 

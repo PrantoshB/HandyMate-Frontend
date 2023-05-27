@@ -1,66 +1,48 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [state, setState] = useState({
-    username: '',
-    password: '',
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleChange = (e) => {
-    setState((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
-  const [error, setError] = useState(true);
-
-  const handleSignin = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    const item = {
-      username: state.username,
-      password: state.password,
-    };
-    if (state.username.length !== 0 && state.password.length !== 0) {
-      dispatch({ type: 'SIGN_IN', payload: item });
-      navigate('/');
-    } else {
-      setError(false);
-    }
+    axios
+      .post('http://localhost:3000/login', {
+        user: {
+          email,
+          password,
+        },
+      })
+      .then((response) => {
+        console.log(response.headers.authorization);
+        localStorage.setItem('token', response.headers.authorization);
+        console.log(response.data);
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
-    <section className="container">
-      <div className="signin">
-        <h1>Sign In</h1>
-        <form className="form">
-          <div className="form-group">
-            <label htmlFor="username">
-              Username:
-              <input type="text" name="username" className="form-control" id="username" placeholder="Enter username" onChange={handleChange} />
-            </label>
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">
-              Password:
-              <input type="password" name="password" className="form-control" id="password" placeholder="Enter password" onChange={handleChange} />
-            </label>
-          </div>
-          <button type="submit" className="btn" onClick={handleSignin}>Sign In</button>
-        </form>
-        <div>
-          <p>
-            Do not have an account?
-            <Link to="/signup">Sign Up</Link>
-          </p>
-          {error === false && <p>Please enter valid username and password</p>}
-        </div>
-      </div>
-    </section>
+    <form onSubmit={handleLogin}>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Login</button>
+    </form>
   );
 };
 
