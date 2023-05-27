@@ -59,6 +59,7 @@ const SignUp = () => {
         onChange={handleChange}
       />
       <input
+        style={{ display: 'none' }}
         type="text"
         placeholder="Role"
         name="role"

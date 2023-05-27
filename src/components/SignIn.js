@@ -17,9 +17,12 @@ const SignIn = () => {
         },
       })
       .then((response) => {
-        console.log(response.headers.authorization);
         localStorage.setItem('token', response.headers.authorization);
-        console.log(response.data);
+        // eslint-disable-next-line camelcase
+        const { role, id, full_name } = response.data.data;
+        localStorage.setItem('role', role);
+        localStorage.setItem('userId', id);
+        localStorage.setItem('full_name', full_name);
         navigate('/');
       })
       .catch((error) => {

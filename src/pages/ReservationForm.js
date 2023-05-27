@@ -10,11 +10,12 @@ const ReservationForm = () => {
   const navigate = useNavigate();
   const locations = useSelector((state) => state.locations.locations);
   const services = useSelector((state) => state.services.services);
+  const userId = localStorage.getItem('userId');
+  const fullName = localStorage.getItem('full_name'); // Retrieve the full name from localStorage
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [serviceId, setServiceId] = useState('');
-  const [userId, setUserId] = useState('');
   const [locationId, setLocationId] = useState('');
 
   useEffect(() => {
@@ -41,7 +42,6 @@ const ReservationForm = () => {
     setStartDate('');
     setEndDate('');
     setServiceId('');
-    setUserId('');
     setLocationId('');
 
     // Redirect to "/reservations"
@@ -49,7 +49,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div>
+    <div className="col-md reservation-body p-2">
       <h1>Create New Reservation</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -93,12 +93,13 @@ const ReservationForm = () => {
         </div>
         <div>
           <label htmlFor="userId">
-            User ID:
+            Full Name:
+            {' '}
+            {/* Display the full name from localStorage */}
             <input
-              type="number"
-              value={userId}
-              onChange={(e) => setUserId(e.target.value)}
-              name="userId"
+              type="text"
+              value={fullName}
+              disabled
             />
           </label>
         </div>

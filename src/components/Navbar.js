@@ -5,16 +5,13 @@ import isAuthenticated from './auth';
 const Navbar = () => {
   const links = [
     { id: 1, name: 'Services', path: '/' },
-    { id: 2, name: 'Reserve', path: '/reserve' },
-    { id: 3, name: 'My Reservations', path: '/reservations' },
-    { id: 4, name: 'Add Service', path: '/add-service' },
-    { id: 5, name: 'Delete Service', path: '/' },
 
   ];
   const navigate = useNavigate();
   const isLoggedIn = isAuthenticated();
+  const isAdmin = localStorage.getItem('role') === 'admin';
   const handleLogout = () => {
-    localStorage.removeItem('token');
+    localStorage.clear();
     navigate('/signin');
   };
   return (
@@ -30,6 +27,26 @@ const Navbar = () => {
               <NavLink className="nav-link" to={link.path}>{link.name}</NavLink>
             </li>
           ))}
+          {isLoggedIn ? (
+            <>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/reserve">Reserve</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/reservations">My Reservations</NavLink>
+              </li>
+            </>
+          ) : null}
+          { isLoggedIn && isAdmin ? (
+            <>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/add-service">Add Service</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/delete-service">Delete Service</NavLink>
+              </li>
+            </>
+          ) : null}
           {isLoggedIn ? (
             <li className="nav-item">
               <button type="button" className="btn btn-link nav-link" onClick={handleLogout}>Logout</button>
