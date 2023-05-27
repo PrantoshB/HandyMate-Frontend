@@ -16,6 +16,52 @@
   object-fit: cover;
   object-position: center;
 }
+.reservation-form-body {
+  background-image: url("https://source.unsplash.com/random/?lightgreen,abstract");
+  background-size: cover;
+  background-position: center;
+}
+
+.reservation-form-overlay {
+  background-color: rgba(9, 226, 9, 0.857);
+  height: 100%;
+  .heading {
+    letter-spacing: 8px;
+    font-size: 1.5rem;
+  }
+}
+
+#reservation-form {
+  color: white;
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  button[type="submit"],
+  input,
+  select {
+    border-radius: 50px;
+  }
+  input,
+  select {
+    background-color: rgba(255, 255, 255, 0.175);
+    border: 2px solid white;
+    color: white;
+  }
+  select {
+    option {
+      color: black;
+    }
+  }
+  input:disabled {
+    background-color: rgba(0, 0, 0, 0.184) !important;
+    border: 2px solid rgba(128, 128, 128, 0.556) !important;
+  }
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}
 @media screen and (min-width: 1024px) {
   .reservation-card {
     flex-direction: row;

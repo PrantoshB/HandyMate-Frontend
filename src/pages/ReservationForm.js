@@ -49,79 +49,83 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="col-md reservation-body p-2">
-      <h1>Create New Reservation</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="startDate">
-            Start Date:
-            <input
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              name="startDate"
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="endDate">
-            End Date:
-            <input
-              type="date"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              name="endDate"
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="serviceId">
-            Service:
-            <select
-              value={serviceId}
-              onChange={(e) => setServiceId(e.target.value)}
-              name="serviceId"
-            >
-              <option value="">Select a service</option>
-              {services.map((service) => (
-                <option key={service.id} value={service.id}>
-                  {service.name}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <div>
-          <label htmlFor="userId">
-            Full Name:
-            {' '}
-            {/* Display the full name from localStorage */}
-            <input
-              type="text"
-              value={fullName}
-              disabled
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="locationId">
-            Location:
-            <select
-              value={locationId}
-              onChange={(e) => setLocationId(e.target.value)}
-              name="locationId"
-            >
-              <option value="">Select a location</option>
-              {locations.map((location) => (
-                <option key={location.id} value={location.id}>
-                  {location.name}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-        <button type="submit">Create Reservation</button>
-      </form>
+    <div className="col-md reservation-form-body p-0">
+      <div className="reservation-form-overlay col-md p-2 m-0 d-flex flex-column align-items-center justify-content-center">
+        <h1 className="heading text-light text-uppercase">Create New Reservation</h1>
+        <hr className="w-50 border-top-2 border-light" />
+        <form onSubmit={handleSubmit} id="reservation-form" className="d-flex flex-column align-items-center g-6">
+          <div className="d-flex align-items-center g-4">
+            <label htmlFor="userId">
+              Name:
+              {' '}
+              {/* Display the full name from localStorage */}
+              <input
+                className="p-2 form-control"
+                type="text"
+                value={fullName}
+                disabled
+              />
+            </label>
+            <label htmlFor="locationId">
+
+              <select
+                className="p-2"
+                value={locationId}
+                onChange={(e) => setLocationId(e.target.value)}
+                name="locationId"
+              >
+                <option value="">Select a location</option>
+                {locations.map((location) => (
+                  <option key={location.id} value={location.id}>
+                    {location.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+          <div className="d-flex align-items-center g-4">
+            <label htmlFor="serviceId">
+
+              <select
+                className="p-2"
+                value={serviceId}
+                onChange={(e) => setServiceId(e.target.value)}
+                name="serviceId"
+              >
+                <option value="">Select a service</option>
+                {services.map((service) => (
+                  <option key={service.id} value={service.id}>
+                    {service.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label htmlFor="startDate">
+              From:&nbsp;
+              <input
+                className="p-2 form-control"
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                name="startDate"
+              />
+            </label>
+            <label htmlFor="endDate">
+              To:&nbsp;
+              <input
+                className="p-2 form-control"
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                name="endDate"
+              />
+            </label>
+
+          </div>
+
+          <button type="submit" className="btn btn-light text-success">Create Reservation</button>
+        </form>
+      </div>
     </div>
   );
 };
