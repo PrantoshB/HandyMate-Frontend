@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/images/hanymate-logo.png'
+import logo from '../assets/images/hanymate-logo.png';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -37,47 +37,48 @@ const SignUp = () => {
   };
 
   return (
-    <section class="signup-bg-image">
-    <form onSubmit={handleSignup} class='sign-form'>
-      <img src={logo} alt="logo" class="logo"/>
-      <input
-        class='sign-form__input'
-        type="text"
-        placeholder="Full Name"
-        name="fullName"
-        value={formData.fullName}
-        onChange={handleChange}
-      />
-      <input
-        class='sign-form__input'
-        type="email"
-        placeholder="Email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-      />
-      <input
-        class='sign-form__input'
-        type="password"
-        placeholder="Password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-      />
-      <input
-        class='sign-form__input'
-        type="text"
-        placeholder="Role"
-        name="role"
-        value={formData.role}
-        onChange={handleChange}
-      />
-      <button 
-      type="submit"
-      class='btn submit-btn'>
-        Sign Up
-      </button>
-    </form>
+    <section className="signup-bg-image">
+      <form onSubmit={handleSignup} className="sign-form">
+        <img src={logo} alt="logo" className="logo" />
+        <input
+          className="sign-form__input"
+          type="text"
+          placeholder="Full Name"
+          name="fullName"
+          value={formData.fullName}
+          onChange={handleChange}
+        />
+        <input
+          className="sign-form__input"
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <input
+          className="sign-form__input"
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        <input
+          className="sign-form__input"
+          type="text"
+          placeholder="Role"
+          name="role"
+          value={formData.role}
+          onChange={handleChange}
+        />
+        <button
+          type="submit"
+          className="btn submit-btn"
+        >
+          Sign Up
+        </button>
+      </form>
     </section>
   );
 };

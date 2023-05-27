@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/images/hanymate-logo.png'
+import logo from '../assets/images/hanymate-logo.png';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -30,29 +30,31 @@ const SignIn = () => {
 
   return (
     <section
-    class="signin-bg-image">
-    <form onSubmit={handleLogin} class='sign-form'>
-      <img src={logo} alt="logo" class="logo logos"/>
-      <input
-        class='sign-form__input'
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        class='sign-form__input'
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button 
-      type="submit"
-      class='btn'>
-        Login
-      </button>
-    </form>
+      className="signin-bg-image"
+    >
+      <form onSubmit={handleLogin} className="sign-form">
+        <img src={logo} alt="logo" className="logo logos" />
+        <input
+          className="sign-form__input"
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          className="sign-form__input"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button
+          type="submit"
+          className="btn"
+        >
+          Login
+        </button>
+      </form>
     </section>
   );
 };
