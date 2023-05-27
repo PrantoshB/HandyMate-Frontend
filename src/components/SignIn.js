@@ -7,22 +7,24 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:3000/login', {
+    axios
+      .post('http://localhost:3000/login', {
         user: {
           email,
           password,
         },
+      })
+      .then((response) => {
+        console.log(response.headers.authorization);
+        localStorage.setItem('token', response.headers.authorization);
+        console.log(response.data);
+        navigate('/');
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      // Handle successful login
-      console.log(response.data);
-      navigate('/');
-    } catch (error) {
-      // Handle login error
-      console.error(error);
-    }
   };
 
   return (
