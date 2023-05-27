@@ -12,52 +12,50 @@ import { fetchServices } from '../store/ServicesSlice';
 const Home = () => {
   const dispatch = useDispatch();
   const cards = useSelector((state) => state.services.services);
-  const rating = Math.round((Math.random() * (5 - 4) + 4) * 10) / 10;
 
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);
 
-
   const isMobile = window.innerWidth <= 768;
 
   return (
     <div className="home col-md-10">
-      <h1 className='bold-font homepage-heading'>
+      <h1 className="bold-font homepage-heading">
         OUR SERVICES
       </h1>
-      <p className='gray-font'>
+      <p className="gray-font">
         Please select a HandyMate service
       </p>
-      <hr className='dash home-dash' />
+      <hr className="dash home-dash" />
       <div className="carousel-container col-md-12">
 
-          <Swiper
-            className="service-list col-md-10"
-            modules={[Navigation, A11y]}
-            spaceBetween={0}
-            slidesPerView={isMobile ? 1 : 3}
-            navigation >
-            {cards.map((card) => (
-              <SwiperSlide 
+        <Swiper
+          className="service-list col-md-10"
+          modules={[Navigation, A11y]}
+          spaceBetween={0}
+          slidesPerView={isMobile ? 1 : 3}
+          navigation
+        >
+          {cards.map((card) => (
+            <SwiperSlide
               key={card.id}
-              
-              >
-                <ServiceCard
-                  name={card.name}
-                  image={card.image}
-                  details={card.details}
-                  rating={
+            >
+              <ServiceCard
+                name={card.name}
+                image={card.image}
+                details={card.details}
+                rating={
                     Math.round((Math.random() * (5 - 4) + 4) * 10) / 10
                   }
-                  price={card.price}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                price={card.price}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
-      );
+  );
 };
 
-      export default Home;
+export default Home;
