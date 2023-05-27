@@ -8,7 +8,7 @@ const SignUp = () => {
     fullName: '',
     email: '',
     password: '',
-    role: '',
+    role: 'user',
   });
 
   const handleChange = (e) => {
