@@ -42,4 +42,12 @@ const createReservation = (reservationData) => async (dispatch) => {
   dispatch(addReservation(data));
 };
 
-export { fetchReservations, createReservation };
+const deleteReservation = (reservationId) => async (dispatch) => {
+  await fetch(`http://localhost:3000/api/v1/reservations/${reservationId}`, {
+    method: 'DELETE',
+  });
+
+  // Dispatch an action to indicate the successful deletion
+  dispatch(fetchReservations());
+};
+export { fetchReservations, createReservation, deleteReservation };

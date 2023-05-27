@@ -1,0 +1,48 @@
+.reservation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.reservation-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.service-thumb {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (min-width: 1024px) {
+  .reservation-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    padding: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    .card-column {
+      display: none;
+      //   display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 16%;
+
+      span {
+        padding: 4px;
+        width: 100%;
+        &:first-child {
+          background-color: rgb(184, 139, 23);
+          color: white;
+          border-radius: 4px 4px 0 0;
+        }
+        &:last-child {
+          background-color: lightgray;
+        }
+      }
+    }
+  }
+}
