@@ -4,20 +4,26 @@ import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    password: '',
+    role: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/signup', {
         user: {
-          full_name: fullName,
-          email,
-          password,
-          role,
+          full_name: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+          role: formData.role,
         },
       });
       // Handle successful signup
@@ -34,26 +40,30 @@ const SignUp = () => {
       <input
         type="text"
         placeholder="Full Name"
-        value={fullName}
-        onChange={(e) => setFullName(e.target.value)}
+        name="fullName"
+        value={formData.fullName}
+        onChange={handleChange}
       />
       <input
         type="email"
         placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
       />
       <input
         type="password"
         placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
       />
       <input
         type="text"
         placeholder="Role"
-        value={role}
-        onChange={(e) => setRole(e.target.value)}
+        name="role"
+        value={formData.role}
+        onChange={handleChange}
       />
       <button type="submit">Sign Up</button>
     </form>
