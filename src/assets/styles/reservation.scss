@@ -46,7 +46,7 @@ $primary: #98bf11;
   }
   input,
   .select-wrapper {
-    background-color: rgba(255, 255, 255, 0.175);
+    background-color: rgba(0, 0, 0, 0.175);
     border: 2px solid white;
     color: white;
     padding: 0 0 0 16px;
@@ -75,7 +75,7 @@ $primary: #98bf11;
     }
   }
   input:disabled {
-    background-color: rgba(0, 0, 0, 0.184) !important;
+    background-color: rgba(255, 253, 253, 0.184) !important;
     border: 2px solid rgba(128, 128, 128, 0.556) !important;
   }
   ::-webkit-calendar-picker-indicator {
