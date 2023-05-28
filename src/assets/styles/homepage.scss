@@ -7,13 +7,15 @@
   top: 50%;
   background-repeat: no-repeat;
   background-size: 25px;
+  display: block;
 }
 
 .home {
+  width: 93vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .singlecard {
@@ -22,14 +24,21 @@
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  text-decoration: none;
+  color: inherit;
 
   img {
-    width: 80%;
+    width: 100%;
   }
 }
 
-.service-list {
-  padding: 3rem 0;
+aside {
+  display: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
 }
 
 .bold-font {
@@ -44,51 +53,12 @@
   border: 1px dashed gray;
   width: 40%;
   margin: 3% 0;
+  align-self: center;
 }
 
 .home-dash {
-  width: 10%;
+  width: 20%;
   margin: 2% 0;
-}
-
-.swiper-button-prev {
-  @include swiper-arrow(0% 25% 25% 0% / 50% 50% 50% 50%);
-
-  left: 17%;
-  background-image: url(../images/left.png);
-  background-position: 80% 50%;
-}
-
-.swiper-button-next {
-  @include swiper-arrow(25% 0 0 25% / 50% 50% 50% 50%);
-
-  right: 0;
-  background-image: url(../images/right.png);
-  background-position: 20% 50%;
-}
-
-.swiper-button-next.swiper-button-disabled,
-.swiper-button-prev.swiper-button-disabled {
-  opacity: 1;
-  pointer-events: none;
-  background-color: #efefef;
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  display: none;
-}
-
-.carousel-container {
-  position: relative;
-}
-
-.react-multi-carousel-track {
-  li {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
 }
 
 i {
@@ -133,5 +103,89 @@ i {
 }
 
 .homepage-heading {
-  margin-top: 4%;
+  margin-top: 25%;
+}
+
+@media (min-width: 801px) {
+  .home {
+    align-items: center;
+    width: 80vw;
+  }
+
+  .singlecard {
+    img {
+      width: 80%;
+    }
+  }
+
+  aside {
+    display: block;
+  }
+
+  .service-list {
+    padding: 3rem 0;
+  }
+
+  .bold-font {
+    font-weight: 700;
+  }
+
+  .gray-font {
+    color: #575756;
+  }
+
+  .dash {
+    border: 1px dashed gray;
+    width: 40%;
+    margin: 3% 0;
+  }
+
+  .home-dash {
+    width: 10%;
+    margin: 2% 0;
+  }
+
+  .swiper-button-prev {
+    @include swiper-arrow(0% 25% 25% 0% / 50% 50% 50% 50%);
+
+    left: 17.19%;
+    background-image: url(../images/left.png);
+    background-position: 80% 50%;
+  }
+
+  .swiper-button-next {
+    @include swiper-arrow(25% 0 0 25% / 50% 50% 50% 50%);
+
+    right: 0;
+    background-image: url(../images/right.png);
+    background-position: 20% 50%;
+  }
+
+  .swiper-button-next.swiper-button-disabled,
+  .swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+    pointer-events: none;
+    background-color: #efefef;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: none;
+  }
+
+  .carousel-container {
+    position: relative;
+  }
+
+  .react-multi-carousel-track {
+    li {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+  }
+
+  .homepage-heading {
+    margin-top: 5%;
+  }
 }

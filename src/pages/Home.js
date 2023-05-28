@@ -49,6 +49,7 @@ const Home = () => {
                     Math.round((Math.random() * (5 - 4) + 4) * 10) / 10
                   }
                 price={card.price}
+                id={card.id}
               />
             </SwiperSlide>
           ))}

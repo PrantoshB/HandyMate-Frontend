@@ -1,38 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { fetchServices } from '../store/ServicesSlice';
 
 const Details = () => {
-  const data = [
-    {
-      id: 1,
-      name: 'Service Name',
-      description: 'Service Description',
-      price: 100,
-      img: 'https://picsum.photos/200/300',
-      duration: 60,
-    },
-  ];
+  const { id } = useParams();
+
+  const dispatch = useDispatch();
+  const services = useSelector((state) => state.services.services);
+  const service = services.find((service) => service.id === Number(id));
+
+  useEffect(() => {
+    dispatch(fetchServices());
+  }, [dispatch]);
   return (
     <div>
       <div>
+        <p>
+          ID
+          {service.id}
+        </p>
         <h1>Details</h1>
-        <img src={data[0].img} alt="img" />
+        <img src={service.image} alt={service.name} />
       </div>
       <div>
-        <h2>{data[0].name}</h2>
+        <h2>{service.name}</h2>
         <table>
           <tbody>
             <tr>
               <td>Description</td>
-              <td>{data[0].description}</td>
+              <td>{service.details}</td>
             </tr>
             <tr>
               <td>Price</td>
-              <td>{data[0].price}</td>
+              <td>{service.price}</td>
             </tr>
             <tr>
               <td>Duration</td>
               <td>
-                {data[0].duration}
+                {service.duration}
                 {' '}
                 minutes
               </td>
@@ -40,8 +46,16 @@ const Details = () => {
           </tbody>
         </table>
       </div>
+      <button type="button">Reserve</button>
     </div>
   );
 };
 
 export default Details;
+
+// Details.propTypes = {
+//   name: PropTypes.string.isRequired,
+//   image: PropTypes.string.isRequired,
+//   details: PropTypes.string.isRequired,
+//   id: PropTypes.number.isRequired,
+// };
