@@ -26,7 +26,7 @@
 }
 
 .reservation-form-overlay {
-  background-color: rgba($primary, 0.7);
+  background-color: rgba($primary, 0.8);
   height: 100%;
 
   .heading {
@@ -99,7 +99,16 @@
     filter: invert(1);
   }
 }
-
+.service-image-in-form {
+  width: 300px;
+}
+.service-name-in-form {
+  font-weight: bold;
+  background-color: $primary;
+  border-radius: 4px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 8px;
+}
 @media screen and (min-width: 1024px) {
   .reservation-card {
     flex-direction: row;
