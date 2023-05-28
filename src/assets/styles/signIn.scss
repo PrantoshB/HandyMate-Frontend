@@ -1,37 +1,71 @@
-.signin-bg-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  width: 100%;
-  margin: 50px;
-  background-image: url(../images/sign.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+aside {
+  display: none;
 }
 
-.signup-bg-image {
+.row {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 100%;
-  margin: 50px;
-  background-image: url(../images/sign.avif);
+  flex-direction: row;
+}
+
+.side-image {
+  width: 50vw;
+  height: 100vh;
+  background-image: url('../../assets/images/signup.jpg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.side-image2 {
+  width: 50vw;
+  height: 100vh;
+  background-image: url('../../assets/images/signin.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.sign__right {
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.input-box {
+  width: 400px;
+  margin-top: 40px;
+}
+
+.intro {
+  display: block;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.intro__text {
+  margin-bottom: 2px;
+  font-style: italic;
+}
+
+.line {
+  display: block;
+  border-bottom: 3px solid #72b600;
+  width: 50%;
+  height: 3px;
+  margin-bottom: 30px;
+  align-items: center;
+  margin-left: 100px;
 }
 
 .logo {
   width: 30%;
   padding: 1rem;
   margin-bottom: 2rem;
-}
-
-.logos {
-  margin-bottom: 6rem;
 }
 
 .sign-form {
@@ -42,9 +76,14 @@
   width: 100%;
 }
 
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
 .sign-form__input {
-  width: 75%;
-  padding: 1rem;
+  width: 100%;
+  padding: 20px;
   margin-bottom: 1rem;
   border: 1px solid #f00;
   border-radius: 30px;
@@ -52,16 +91,67 @@
 }
 
 .btn {
-  width: 15%;
+  width: 20%;
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 700;
   color: #fff;
-  background-color: #0d6efc;
+  background-color: #72b600;
   border: none;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.sign-in {
+  font-weight: 700;
+  text-align: center;
   cursor: pointer;
 }
 
-.submit-btn {
-  margin-bottom: 4rem;
+@media screen and (max-width: 768px) {
+  .side-image {
+    height: 50vh;
+    width: 100vw;
+  }
+  .side-image2 {
+    height: 50vh;
+    width: 100vw;
+  }
+  .sign__right {
+    width: 50%;
+  }
+  .input-box {
+    width: 100%;
+  }
+  .intro {
+    margin-bottom: 20px;
+  }
+
+  .intro__title {
+    font-size: 15px;
+  }
+
+  .intro__text {
+    font-size: 10px;
+  }
+
+  .line {
+    width: 30%;
+    margin-left: 70px;
+  }
+  .logo {
+    width: 50%;
+  }
+  .btn {
+    width: 50%;
+  }
+  .sign-in {
+    font-size: 10px;
+  }
 }
+  
