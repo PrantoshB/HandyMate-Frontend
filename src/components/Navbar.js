@@ -37,7 +37,7 @@ const Navbar = () => {
               </li>
             </>
           ) : null}
-          { isLoggedIn && isAdmin ? (
+          {isLoggedIn && isAdmin ? (
             <>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/add-service">Add Service</NavLink>
