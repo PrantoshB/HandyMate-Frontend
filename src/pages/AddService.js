@@ -3,12 +3,14 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addService } from '../store/ServicesSlice';
 import { storage } from '../firebaseConfig';
+import AddServiceIcon from '../assets/images/add-service-icon5.png';
 
 const AddService = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
   const [details, setDetails] = useState('');
+  const [duration, setDuration] = useState('');
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
@@ -63,6 +65,7 @@ const AddService = () => {
           setPrice('');
           setImage('');
           setDetails('');
+          setDuration('');
           setIsUploading(false);
           setUploadSuccess(true);
           navigate('/');
@@ -72,14 +75,38 @@ const AddService = () => {
   };
 
   return (
-    <form>
+    <div className="col-md-10 container add-service-div">
       <div>
-        <input type="text" placeholder="Service Name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="float" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-        <input type="file" placeholder="Image" onChange={handleFileChange} />
-        <input type="textarea" placeholder="Details" value={details} onChange={(e) => setDetails(e.target.value)} />
+      <div className='d-sm-inline-flex align-items-center my-4'>
+      <img src={AddServiceIcon} className='img-thumbnail add-service-icon' />
+      <h1 className='mx-3'>Service</h1>
       </div>
-      <button type="button" onClick={handleAddClick}>Add Service</button>
+      </div>
+
+    <form className="row g-3">
+    <div className='col-md-12'>
+        <input type="text" placeholder="Service Type" className='form-control' value={name} onChange={(e) => setName(e.target.value)} />
+      </div>
+
+      <div className='input-group col-md-12'>
+      <span class="input-group-text add-price-input">$</span>
+        <input type="float" placeholder="Service Charge" className='form-control' arial-label='Dollar amount (with dot and two decimal palces)' value={price} onChange={(e) => setPrice(e.target.value)} />
+        <span class="input-group-text add-price-input">.00</span>
+      </div>
+      <div className='col-md-12'>
+        <input type="textarea" placeholder="Details" className='form-control' value={details} onChange={(e) => setDetails(e.target.value)} />
+     </div>
+     <div className='col-md-12'>
+        <input type="file"  className='form-control' id='inputGroupFile02' onChange={handleFileChange} />
+     </div>
+     <div className='col-md-12'>
+        <input type="number" placeholder="Duration" className='form-control' value={duration} onChange={(e) => setDuration(e.target.value)} />
+     </div>
+     <div className='col-md-12 d-flex justify-content-end g-3'>
+      <button type="button" className='col-md-5 btn add-btn mx-3' onClick={handleAddClick}>Add Service</button>
+      <button type="button" className='col-md-4 btn btn-outline-danger cancel-add-btn' onClick={handleAddClick}>Cancel</button>
+      </div>
+    
 
       {isUploading && (
         <div>
@@ -103,6 +130,7 @@ const AddService = () => {
         </div>
       )}
     </form>
+    </div>
   );
 };
 
