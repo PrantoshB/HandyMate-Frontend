@@ -39,8 +39,7 @@ const SignUp = () => {
   return (
     <section className="signup">
       <div className="row">
-        <div className="side-image">
-        </div>
+        <div className="side-image" />
         <div className="sign__right">
           <div className="input-box">
             <div className="intro">
@@ -59,7 +58,7 @@ const SignUp = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                 />
-            </div>
+              </div>
               <div className="input-field">
                 <input
                   className="sign-form__input"
@@ -70,7 +69,7 @@ const SignUp = () => {
                   onChange={handleChange}
                 />
               </div>
-              <div className="input-field"> 
+              <div className="input-field">
                 <input
                   className="sign-form__input"
                   type="password"
@@ -90,18 +89,18 @@ const SignUp = () => {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit"className="btn">Signup</button>
-        </form>
-        <div className='sign-in'>
-          <p>
-            Already have an account?
-            <Link to="/signin">Sign In</Link>
-          </p>
-          {error === false && <p>Please enter valid username and password</p>}
-        </div>
+              <button type="submit" className="btn">Signup</button>
+            </form>
+            <div className="sign-in">
+              <p>
+                Already have an account?
+                <Link to="/signin">Sign In</Link>
+              </p>
+              {error === false && <p>Please enter valid username and password</p>}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </section>
   );
 };

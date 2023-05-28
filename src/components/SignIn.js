@@ -31,8 +31,7 @@ const SignIn = () => {
   return (
     <section className="signin">
       <div className="row">
-        <div className="side-image2">
-        </div>
+        <div className="side-image2" />
         <div className="sign__right">
           <div className="input-box">
             <div className="intro">
@@ -66,13 +65,13 @@ const SignIn = () => {
                 Login
               </button>
             </form>
-            <div className='sign-in'>
+            <div className="sign-in">
               <p>
                 Do not have an account?
                 <Link to="/signup">Sign Up</Link>
               </p>
               {error === false && <p>Please enter valid username and password</p>}
-        </div>
+            </div>
           </div>
         </div>
       </div>
