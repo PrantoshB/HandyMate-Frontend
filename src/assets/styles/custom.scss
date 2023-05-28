@@ -1,5 +1,16 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./signIn.scss";
+@import "./homepage.scss";
+
+:root {
+  --primary-color: #98bf11;
+  --gray-color-font: #adadaf;
+  --gray-color: #efefef;
+}
+
+#root {
+  font-family: sans-serif;
+}
 
 .site-logo {
   width: 100%;
@@ -8,37 +19,4 @@
 
 .sidebar {
   min-height: 100vh;
-}
-
-.slide {
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-
-  img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    object-position: center;
-  }
-}
-
-.service-list {
-  display: flex;
-  max-width: 100vw;
-  width: 80%;
-  flex-wrap: wrap;
-  padding: 3rem 0;
-  justify-content: center;
-}
-
-.carousel-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }

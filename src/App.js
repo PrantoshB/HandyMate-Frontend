@@ -7,13 +7,15 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import AddService from './pages/AddService';
 import Navbar from './components/Navbar';
+import Details from './pages/Details';
 
 const App = () => (
-  <div className="container-fluid d-flex">
+  <div className="container-fluid col-md-12 d-flex">
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route exact path="/services/:id" element={<Details />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/reserve" element={<ReservationForm />} />
         <Route path="signin" element={<SignIn />} />
