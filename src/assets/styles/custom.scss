@@ -1,17 +1,23 @@
+$primary: #98bf11 !default;
+$gray: #efefef;
+$gray-font: #adadaf;
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./reservation.scss";
 @import "./homepage.scss";
 
 :root {
-  --primary-color: #98bf11;
-  --gray-color-font: #adadaf;
-  --gray-color: #efefef;
+  --primary-color: $primary;
+  --gray-color-font: $gray-font;
+  --gray-color: $gray;
 }
 
 #root {
   font-family: sans-serif;
 }
 
+.main-nav {
+  max-width: 250px;
+}
 .site-logo {
   width: 100%;
   padding: 1rem;
@@ -19,6 +25,7 @@
 
 .sidebar {
   min-height: 100vh;
+  padding-top: 50px;
 }
 
 .slide {
@@ -103,4 +110,61 @@
 }
 .g-16 {
   gap: 4rem;
+}
+
+// Navbar.scss
+.btn-sidebar-toggle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+  height: 1px;
+  background-color: transparent;
+  position: relative;
+  transition: background-color 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 24px;
+    height: 4px;
+    background-color: #000;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    top: 6px;
+  }
+}
+
+.btn-sidebar-toggle {
+  &.active {
+    .hamburger-icon {
+      background-color: transparent;
+
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+}
+
+.container-main {
+  min-height: 100vh;
 }

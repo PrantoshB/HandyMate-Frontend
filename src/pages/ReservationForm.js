@@ -49,12 +49,12 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="col-md reservation-form-body p-0">
+    <div className="col-md container-main reservation-form-body p-0">
       <div className="reservation-form-overlay col-md p-2 m-0 d-flex flex-column align-items-center justify-content-center">
-        <h1 className="heading text-light text-uppercase">Create New Reservation</h1>
+        <h1 className="heading text-light text-uppercase text-center">Create New Reservation</h1>
         <hr className="w-50 border-top-2 border-light" />
         <form onSubmit={handleSubmit} id="reservation-form" className="d-flex flex-column align-items-center g-6">
-          <div className="d-flex align-items-center g-4">
+          <div className="d-flex input-row align-items-center g-4">
             <label htmlFor="userId">
               Name:
               {' '}
@@ -85,7 +85,7 @@ const ReservationForm = () => {
               </div>
             </label>
           </div>
-          <div className="d-flex align-items-center g-4">
+          <div className="d-flex input-row align-items-center g-4">
             <label htmlFor="serviceId">
 
               <div className="select-wrapper">
