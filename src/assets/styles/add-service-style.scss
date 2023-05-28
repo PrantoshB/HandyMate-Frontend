@@ -1,0 +1,39 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+
+.add-service-div {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-image: url("../images/add-service-bg.jpeg");
+    background-repeat: no-repeat;
+    position: relative;
+    top: rem;
+}
+
+.add-service-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.add-price-input {
+    background-color: #97BF02;
+    color: white;
+}
+
+.add-btn {
+    background-color: #97BF02;
+    color: white;
+    border: 1px solid white;
+    border-radius: 1rem;  
+}
+
+.add-btn:hover {
+    border: 1px solid #97BF02;
+}
+
+.cancel-add-btn {
+    border-radius: 1rem;
+}
