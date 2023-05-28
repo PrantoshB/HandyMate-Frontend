@@ -9,7 +9,6 @@ aside {
 
 .side-image {
   width: 50vw;
-  height: 100vh;
   background-image: url('../../assets/images/signup.jpg');
   background-size: cover;
   background-position: center;
@@ -18,7 +17,6 @@ aside {
 
 .side-image2 {
   width: 50vw;
-  height: 100vh;
   background-image: url('../../assets/images/signin.jpg');
   background-size: cover;
   background-position: center;
@@ -26,7 +24,7 @@ aside {
 }
 
 .sign__right {
-  width: 30%;
+  width: 38%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -41,7 +39,8 @@ aside {
 }
 
 .intro {
-  display: block;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   margin-bottom: 50px;
@@ -55,17 +54,9 @@ aside {
 .line {
   display: block;
   border-bottom: 3px solid #72b600;
-  width: 50%;
+  width: 30%;
   height: 3px;
   margin-bottom: 30px;
-  align-items: center;
-  margin-left: 100px;
-}
-
-.logo {
-  width: 30%;
-  padding: 1rem;
-  margin-bottom: 2rem;
 }
 
 .sign-form {
@@ -79,11 +70,12 @@ aside {
 .input-field {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .sign-form__input {
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 1rem;
   border: 2px solid #72b600;
   border-radius: 30px;
@@ -91,10 +83,11 @@ aside {
 }
 
 .btn {
-  width: 20%;
-  border-radius: 20px;
+  width: 40%;
+  border-radius: 50px;
   font-size: 1rem;
   font-weight: 700;
+  padding: 10px 20px;
   color: #fff;
   background-color: #72b600;
   border: none;
@@ -113,48 +106,59 @@ aside {
   cursor: pointer;
 }
 
-.sign-in a {
+.session-link-btn {
   color: #517d06;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {
   .side-image {
-    height: 50vh;
+    height: 30vh;
     width: 100vw;
   }
 
   .side-image2 {
-    height: 50vh;
+    height: 30vh;
     width: 100vw;
   }
 
   .sign__right {
-    width: 50%;
+    margin: 0;
+    width: 100%;
+    height: auto;
   }
 
   .input-box {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .intro {
     margin-bottom: 20px;
   }
 
+  .input-field {
+    display: flex;
+    align-items: center;
+  }
+
+  .sign-form__input {
+    width: 80%;
+    padding: 7px 15px;
+  }
+
   .intro__title {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .intro__text {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .line {
-    width: 30%;
-    margin-left: 70px;
-  }
-
-  .logo {
-    width: 50%;
+    width: 40%;
   }
 
   .btn {
@@ -162,6 +166,6 @@ aside {
   }
 
   .sign-in {
-    font-size: 10px;
+    font-size: 15px;
   }
 }

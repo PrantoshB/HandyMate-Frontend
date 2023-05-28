@@ -29,11 +29,11 @@ const SignIn = () => {
   };
 
   return (
-    <section className="signin">
-      <div className="row">
-        <div className="side-image2" />
+    <section className="signin col-md-12">
+      <div className="row col-md-12">
+        <div className="side-image2 col-md-6" />
         <div className="sign__right">
-          <div className="input-box">
+          <div className="input-box col-md-6">
             <div className="intro">
               <span className="line" />
               <h4 className="intro__title">Welcome to HandyMate</h4>
@@ -68,7 +68,7 @@ const SignIn = () => {
             <div className="sign-in">
               <p>
                 Do not have an account?
-                <Link to="/signup">Sign Up</Link>
+                <Link to="/signup" className="session-link-btn"> Sign Up</Link>
               </p>
               {error === false && <p>Please enter valid username and password</p>}
             </div>

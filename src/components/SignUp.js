@@ -8,7 +8,6 @@ const SignUp = () => {
     fullName: '',
     email: '',
     password: '',
-    role: 'user',
   });
   const [error] = useState(true);
 
@@ -24,20 +23,17 @@ const SignUp = () => {
           full_name: formData.fullName,
           email: formData.email,
           password: formData.password,
-          role: formData.role,
         },
       });
-      // Handle successful signup
       console.log(response.data);
       navigate('/');
     } catch (error) {
-      // Handle signup error
       console.error(error);
     }
   };
 
   return (
-    <section className="signup">
+    <section className="signup col-md-12">
       <div className="row">
         <div className="side-image" />
         <div className="sign__right">
@@ -79,22 +75,12 @@ const SignUp = () => {
                   onChange={handleChange}
                 />
               </div>
-              <div className="input-field">
-                <input
-                  className="sign-form__input"
-                  type="text"
-                  placeholder="Role"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleChange}
-                />
-              </div>
               <button type="submit" className="btn">Signup</button>
             </form>
             <div className="sign-in">
               <p>
                 Already have an account?
-                <Link to="/signin">Sign In</Link>
+                <Link to="/signin" className="session-link-btn"> Sign In</Link>
               </p>
               {error === false && <p>Please enter valid username and password</p>}
             </div>
