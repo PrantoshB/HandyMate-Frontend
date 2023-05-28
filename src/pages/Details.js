@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchServices } from '../store/ServicesSlice';
 
 const Details = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -13,13 +14,18 @@ const Details = () => {
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);
+
+  const handleReserveClick = () => {
+    navigate('/reserve', { state: { serviceId: service.id.toString() } });
+  };
+
+  if (!service) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       <div>
-        <p>
-          ID
-          {service.id}
-        </p>
         <h1>Details</h1>
         <img src={service.image} alt={service.name} />
       </div>
@@ -46,16 +52,12 @@ const Details = () => {
           </tbody>
         </table>
       </div>
-      <button type="button">Reserve</button>
+
+      <button type="button" onClick={handleReserveClick} className="btn btn-warning">
+        Reserve
+      </button>
     </div>
   );
 };
 
 export default Details;
-
-// Details.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   image: PropTypes.string.isRequired,
-//   details: PropTypes.string.isRequired,
-//   id: PropTypes.number.isRequired,
-// };

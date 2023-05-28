@@ -20,7 +20,7 @@ const Home = () => {
   const isMobile = window.innerWidth <= 768;
 
   return (
-    <div className="home col-md-10">
+    <div className="home col-md">
       <h1 className="bold-font homepage-heading">
         OUR SERVICES
       </h1>
@@ -28,10 +28,10 @@ const Home = () => {
         Please select a HandyMate service
       </p>
       <hr className="dash home-dash" />
-      <div className="carousel-container col-md-12">
+      <div className="carousel-container col-12">
 
         <Swiper
-          className="service-list col-md-10"
+          className="service-list col-10"
           modules={[Navigation, A11y]}
           spaceBetween={0}
           slidesPerView={isMobile ? 1 : 3}

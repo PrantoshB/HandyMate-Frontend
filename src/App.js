@@ -1,5 +1,7 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import {
+  BrowserRouter, Routes, Route,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Reservations from './pages/Reservations';
 import ReservationForm from './pages/ReservationForm';
@@ -9,21 +11,35 @@ import AddService from './pages/AddService';
 import Navbar from './components/Navbar';
 import Details from './pages/Details';
 
-const App = () => (
-  <div className="container-fluid col-md-12 d-flex">
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route exact path="/services/:id" element={<Details />} />
-        <Route path="/reservations" element={<Reservations />} />
-        <Route path="/reserve" element={<ReservationForm />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/add-service" element={<AddService />} />
-      </Routes>
-    </BrowserRouter>
-  </div>
-);
+const App = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+  return (
+    <div className="container-fluid col-md-12 d-flex p-0">
+      <button
+        type="button"
+        className={`btn btn-link btn-sidebar-toggle ${sidebarOpen ? 'active' : ''}`}
+        onClick={toggleSidebar}
+      >
+        <span className="hamburger-icon" />
+      </button>
+      <BrowserRouter>
+        <Navbar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route exact path="/services/:id" element={<Details />} />
+          <Route path="/reservations" element={<Reservations />} />
+          <Route path="/reserve" element={<ReservationForm />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/add-service" element={<AddService />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+};
 
 export default App;

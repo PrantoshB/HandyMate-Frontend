@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { createReservation } from '../store/ReservationsSlice';
 import { fetchLocations } from '../store/LocationsSlice';
 import { fetchServices } from '../store/ServicesSlice';
 
 const ReservationForm = () => {
+  const { id } = useParams(); // Extract the serviceId from the URL path
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const locations = useSelector((state) => state.locations.locations);
   const services = useSelector((state) => state.services.services);
   const userId = localStorage.getItem('userId');
-  const fullName = localStorage.getItem('full_name'); // Retrieve the full name from localStorage
+  const fullName = localStorage.getItem('full_name');
 
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [serviceId, setServiceId] = useState('');
+  const [serviceId, setServiceId] = useState(id || '');
   const [locationId, setLocationId] = useState('');
 
   useEffect(() => {
@@ -23,10 +24,15 @@ const ReservationForm = () => {
     dispatch(fetchServices());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (id) {
+      setServiceId(id); // Set the serviceId extracted from the URL as the initial value
+    }
+  }, [id]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Create the reservation data object
     const reservationData = {
       start_date: startDate,
       end_date: endDate,
@@ -35,16 +41,13 @@ const ReservationForm = () => {
       location_id: parseInt(locationId, 10),
     };
 
-    // Dispatch the createReservation action
     dispatch(createReservation(reservationData));
 
-    // Reset the form
     setStartDate('');
     setEndDate('');
     setServiceId('');
     setLocationId('');
 
-    // Redirect to "/reservations"
     navigate('/reservations');
   };
 
@@ -57,24 +60,11 @@ const ReservationForm = () => {
           <div className="d-flex input-row align-items-center g-4">
             <label htmlFor="userId">
               Name:
-              {' '}
-              {/* Display the full name from localStorage */}
-              <input
-                className="p-2 form-control"
-                type="text"
-                value={fullName}
-                disabled
-              />
+              <input className="p-2 form-control" type="text" value={fullName} disabled />
             </label>
             <label htmlFor="locationId">
-
               <div className="select-wrapper">
-                <select
-                  className="p-2 px-0"
-                  value={locationId}
-                  onChange={(e) => setLocationId(e.target.value)}
-                  name="locationId"
-                >
+                <select className="p-2 px-0" value={locationId} onChange={(e) => setLocationId(e.target.value)} name="locationId">
                   <option value="">Select a location</option>
                   {locations.map((location) => (
                     <option key={location.id} value={location.id}>
@@ -87,17 +77,14 @@ const ReservationForm = () => {
           </div>
           <div className="d-flex input-row align-items-center g-4">
             <label htmlFor="serviceId">
-
               <div className="select-wrapper">
-                <select
-                  className="p-2 px-0"
-                  value={serviceId}
-                  onChange={(e) => setServiceId(e.target.value)}
-                  name="serviceId"
-                >
+                <select className="p-2 px-0" defaultValue={serviceId} onChange={(e) => setServiceId(e.target.value)} name="serviceId">
                   <option value="">Select a service</option>
                   {services.map((service) => (
-                    <option key={service.id} value={service.id}>
+                    <option
+                      key={service.id}
+                      value={service.id}
+                    >
                       {service.name}
                     </option>
                   ))}
@@ -106,27 +93,13 @@ const ReservationForm = () => {
             </label>
             <label htmlFor="startDate">
               From:&nbsp;
-              <input
-                className="p-2 form-control"
-                type="date"
-                value={startDate}
-                onChange={(e) => setStartDate(e.target.value)}
-                name="startDate"
-              />
+              <input className="p-2 form-control" type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} name="startDate" />
             </label>
             <label htmlFor="endDate">
               To:&nbsp;
-              <input
-                className="p-2 form-control"
-                type="date"
-                value={endDate}
-                onChange={(e) => setEndDate(e.target.value)}
-                name="endDate"
-              />
+              <input className="p-2 form-control" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} name="endDate" />
             </label>
-
           </div>
-
           <button type="submit" className="btn btn-light text-success">Create Reservation</button>
         </form>
       </div>
