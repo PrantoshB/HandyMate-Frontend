@@ -11,12 +11,14 @@
   flex-direction: column;
   gap: 16px;
 }
+
 .service-thumb {
   height: 50px;
   width: 50px;
   object-fit: cover;
   object-position: center;
 }
+
 .reservation-form-body {
   background-image: url("https://source.unsplash.com/random/?lightgreen,abstract");
   background-size: cover;
@@ -26,6 +28,7 @@
 .reservation-form-overlay {
   background-color: rgba($primary, 0.7);
   height: 100%;
+
   .heading {
     letter-spacing: 8px;
     font-size: 1rem;
@@ -37,18 +40,22 @@
     display: flex;
     flex-direction: column;
   }
+
   color: white;
+
   label {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
+
   button[type="submit"],
   input,
   .select-wrapper {
     border-radius: 50px;
   }
+
   input,
   .select-wrapper {
     background-color: rgba(0, 0, 0, 0.175);
@@ -56,6 +63,7 @@
     color: white;
     padding: 0 0 0 16px;
   }
+
   .select-wrapper {
     &::after {
       content: "⌄";
@@ -68,6 +76,7 @@
       line-height: 1;
     }
   }
+
   select {
     -webkit-appearance: none;
     appearance: none;
@@ -75,18 +84,22 @@
     border: none;
     outline: none;
     color: white;
+
     option {
       color: black;
     }
   }
+
   input:disabled {
     background-color: rgba(255, 253, 253, 0.184) !important;
     border: 2px solid rgba(128, 128, 128, 0.556) !important;
   }
+
   ::-webkit-calendar-picker-indicator {
     filter: invert(1);
   }
 }
+
 @media screen and (min-width: 1024px) {
   .reservation-card {
     flex-direction: row;
@@ -95,6 +108,7 @@
     border-radius: 4px;
     padding: 16px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
     .card-column {
       display: none;
       //   display: flex;
@@ -105,32 +119,38 @@
       span {
         padding: 4px;
         width: 100%;
+
         &:first-child {
           background-color: rgb(184, 139, 23);
           color: white;
           border-radius: 4px 4px 0 0;
         }
+
         &:last-child {
           background-color: lightgray;
         }
       }
     }
   }
+
   .reservation-form-overlay {
     .heading {
       font-size: 1.5rem;
     }
   }
+
   #reservation-form {
     .input-row {
       display: flex;
       flex-direction: row;
       gap: 8px;
     }
+
     label {
       flex-direction: row;
       align-items: center;
     }
+
     .select-wrapper {
       &::after {
         content: "⌄";

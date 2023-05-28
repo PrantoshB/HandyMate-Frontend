@@ -1,6 +1,7 @@
 $primary: #98bf11 !default;
 $gray: #efefef;
 $gray-font: #adadaf;
+
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./reservation.scss";
 @import "./homepage.scss";
@@ -18,6 +19,7 @@ $gray-font: #adadaf;
 .main-nav {
   max-width: 250px;
 }
+
 .site-logo {
   width: 100%;
   padding: 1rem;
@@ -66,58 +68,68 @@ $gray-font: #adadaf;
 .g-1 {
   gap: 0.25rem;
 }
+
 .g-2 {
   gap: 0.5rem;
 }
+
 .g-3 {
   gap: 0.75rem;
 }
+
 .g-4 {
   gap: 1rem;
 }
+
 .g-5 {
   gap: 1.25rem;
 }
+
 .g-6 {
   gap: 1.5rem;
 }
+
 .g-7 {
   gap: 1.75rem;
 }
+
 .g-8 {
   gap: 2rem;
 }
+
 .g-9 {
   gap: 2.25rem;
 }
+
 .g-10 {
   gap: 2.5rem;
 }
+
 .g-11 {
   gap: 2.75rem;
 }
+
 .g-12 {
   gap: 3rem;
 }
+
 .g-13 {
   gap: 3.25rem;
 }
+
 .g-14 {
   gap: 3.5rem;
 }
+
 .g-15 {
   gap: 3.75rem;
 }
+
 .g-16 {
   gap: 4rem;
 }
 
 // Navbar.scss
-.btn-sidebar-toggle {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-}
 .hamburger-icon {
   display: flex;
   flex-direction: column;
@@ -148,6 +160,10 @@ $gray-font: #adadaf;
 }
 
 .btn-sidebar-toggle {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
   &.active {
     .hamburger-icon {
       background-color: transparent;
