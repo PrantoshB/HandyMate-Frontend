@@ -39,7 +39,7 @@ const Details = () => {
               <td>{service.details}</td>
             </tr>
             <tr>
-              <td>Price</td>
+              <td>Service charge</td>
               <td>
                 $
                 {service.price}
@@ -52,6 +52,9 @@ const Details = () => {
                 {' '}
                 hours
               </td>
+            </tr>
+            <tr>
+              <td>Rating</td>
             </tr>
           </tbody>
         </table>
