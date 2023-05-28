@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import logo from '../assets/images/hanymate-logo.png';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -11,6 +10,7 @@ const SignUp = () => {
     password: '',
     role: 'user',
   });
+  const [error] = useState(true);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,48 +37,71 @@ const SignUp = () => {
   };
 
   return (
-    <section className="signup-bg-image">
-      <form onSubmit={handleSignup} className="sign-form">
-        <img src={logo} alt="logo" className="logo" />
-        <input
-          className="sign-form__input"
-          type="text"
-          placeholder="Full Name"
-          name="fullName"
-          value={formData.fullName}
-          onChange={handleChange}
-        />
-        <input
-          className="sign-form__input"
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          className="sign-form__input"
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <input
-          className="sign-form__input"
-          type="text"
-          placeholder="Role"
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-        />
-        <button
-          type="submit"
-          className="btn submit-btn"
-        >
-          Sign Up
-        </button>
-      </form>
+    <section className="signup">
+      <div className="row">
+        <div className="side-image">
+        </div>
+        <div className="sign__right">
+          <div className="input-box">
+            <div className="intro">
+              <span className="line" />
+              <h4 className="intro__title">Welcome to HandyMate</h4>
+              <p className="intro__text">Available For Home Services</p>
+              <p className="intro__text">Signup to get started!</p>
+            </div>
+            <form onSubmit={handleSignup} className="sign-form">
+              <div className="input-field">
+                <input
+                  className="sign-form__input"
+                  type="text"
+                  placeholder="Full Name"
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                />
+            </div>
+              <div className="input-field">
+                <input
+                  className="sign-form__input"
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="input-field"> 
+                <input
+                  className="sign-form__input"
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="input-field">
+                <input
+                  className="sign-form__input"
+                  type="text"
+                  placeholder="Role"
+                  name="role"
+                  value={formData.role}
+                  onChange={handleChange}
+                />
+              </div>
+              <button type="submit"className="btn">Signup</button>
+        </form>
+        <div className='sign-in'>
+          <p>
+            Already have an account?
+            <Link to="/signin">Sign In</Link>
+          </p>
+          {error === false && <p>Please enter valid username and password</p>}
+        </div>
+        </div>
+      </div>
+    </div>
     </section>
   );
 };
