@@ -31,64 +31,66 @@ const Details = () => {
   return (
     <>
       {!showForm ? (
-        <div className="row">
-          <h1 id="details-heading">Details</h1>
-          <div className="col-md-6 d-flex flex-column align-items-center">
-            <div className="row">
-              <div className="col-12 text-center">
-                <img src={service.image} alt={service.name} className="shadow-lg img-fluid mx-auto" />
+        <div className="d-flex flex-column align-items-center col-md col-sm container-main p-4">
+          <h1 id="details-heading" className="text-center text-uppercase m-5">Details</h1>
+          <div className="container d-flex flex-row-md flex-column-sm justify-content-between">
+            <div className="col-md-6 d-flex flex-column align-items-center">
+              <div className="row">
+                <div className="col-12 text-center">
+                  <img src={service.image} alt={service.name} className="shadow-lg img-fluid mx-auto" />
+                </div>
               </div>
-            </div>
-            <div className="row">
+
               <div className="col-12">
-                <button type="button" className="details-btn" onClick={handleReturn} style={{ marginLeft: '-15px' }}>
+                <button type="button" className="details-btn" onClick={handleReturn} style={{ borderRadius: '50px 4px 4px 50px' }}>
                   <FaAngleLeft />
                   {' '}
                   Return
                 </button>
               </div>
-            </div>
-          </div>
 
-          <div className="col-md-6 ">
-            <h2>{service.name}</h2>
-            <table className="table table-striped ">
-              <tbody>
-                <tr>
-                  <td>Description</td>
-                  <td>{service.details}</td>
-                </tr>
-                <tr>
-                  <td>Service charge</td>
-                  <td>
-                    $
-                    {service.price}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Duration</td>
-                  <td>
-                    {service.duration}
-                    {' '}
-                    hours
-                  </td>
-                </tr>
-                <tr>
-                  <td>Rating</td>
-                  <td>
-                    {' '}
-                    <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
-                    <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
-                    <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
-                    <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
-                    <i className="fa-sharp fa-solid fa-star-half-stroke" />
-                    {' '}
-                    {rating}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button type="button" onClick={handleReserveClick} className="details-btn">Reserve</button>
+            </div>
+
+            <div className="col-md-6 ">
+              <h2>{service.name}</h2>
+              <table className="table table-striped ">
+                <tbody>
+                  <tr>
+                    <td>Description</td>
+                    <td>{service.details}</td>
+                  </tr>
+                  <tr>
+                    <td>Service charge</td>
+                    <td>
+                      $
+                      {service.price}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Duration</td>
+                    <td>
+                      {service.duration}
+                      {' '}
+                      hours
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Rating</td>
+                    <td>
+                      {' '}
+                      <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                      <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                      <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                      <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                      <i className="fa-sharp fa-solid fa-star-half-stroke" />
+                      {' '}
+                      {rating}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" onClick={handleReserveClick} className="details-btn">Reserve</button>
+            </div>
           </div>
         </div>
       ) : (

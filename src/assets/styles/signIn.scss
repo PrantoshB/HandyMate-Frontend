@@ -1,15 +1,10 @@
-aside {
-  display: none;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}
+// aside {
+//   display: none;
+// }
 
 .side-image {
   width: 50vw;
-  background-image: url('../../assets/images/signup.jpg');
+  background-image: url("../../assets/images/signup.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +12,7 @@ aside {
 
 .side-image2 {
   width: 50vw;
-  background-image: url('../../assets/images/signin.jpg');
+  background-image: url("../../assets/images/signin.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,24 +75,6 @@ aside {
   border: 2px solid #72b600;
   border-radius: 30px;
   font-size: 1rem;
-}
-
-.btn {
-  width: 40%;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 10px 20px;
-  color: #fff;
-  background-color: #72b600;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 3rem;
-}
-
-.btn:hover {
-  background-color: #0d6efd;
-  color: #fff;
 }
 
 .sign-in {

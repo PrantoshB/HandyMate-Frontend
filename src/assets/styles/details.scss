@@ -1,0 +1,14 @@
+.details-btn {
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: darken($primary, 10%);
+  }
+}
