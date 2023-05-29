@@ -5,11 +5,6 @@
 
 .signin,
 .signup {
-  aside,
-  .btn-sidebar-toggle {
-    display: none;
-  }
-
   .home-icon {
     font-size: 48px;
   }
@@ -17,6 +12,13 @@
 
 .mobile-nav {
   display: block;
+}
+
+.offcanvas-title {
+  .site-logo {
+    height: auto;
+    width: 66%;
+  }
 }
 
 .mobile-nav-container {
@@ -44,5 +46,20 @@
 
   .site-logo-mobile {
     display: none;
+  }
+
+  .nav-link {
+    padding: 8px 16px;
+    color: darken($primary, 10%);
+
+    &:hover {
+      color: white;
+      background-color: $primary;
+    }
+
+    &.active {
+      color: white;
+      background-color: darken($primary, 10%);
+    }
   }
 }

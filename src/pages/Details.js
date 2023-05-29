@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from 'react-icons/fa';
 import { fetchServices } from '../store/ServicesSlice';
 import ReserveFromService from '../components/ReserveFromService';
 
 const Details = () => {
   const { id } = useParams();
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const rating = searchParams.get('rating');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const services = useSelector((state) => state.services.services);
   const service = services.find((service) => service.id === Number(id));
 
   const [showForm, setShowForm] = useState(false);
+
+  const rating = Math.round((Math.random() * (5 - 4) + 4) * 10) / 10;
 
   useEffect(() => {
     dispatch(fetchServices());
@@ -31,8 +30,8 @@ const Details = () => {
   return (
     <>
       {!showForm ? (
-        <div className="d-flex flex-column align-items-center col-md col-sm container-main p-4">
-          <h1 id="details-heading" className="text-center text-uppercase m-5">Details</h1>
+        <div className="d-flex flex-column align-items-center col-md col-sm container-main justify-content-center p-4">
+
           <div className="container d-flex flex-row-md flex-column-sm justify-content-between">
             <div className="col-md-6 d-flex flex-column align-items-center">
               <div className="row">
@@ -41,7 +40,7 @@ const Details = () => {
                 </div>
               </div>
 
-              <div className="col-12">
+              <div className="col-12 mt-5">
                 <button type="button" className="details-btn" onClick={handleReturn}>
                   <FaAngleLeft />
                   {' '}

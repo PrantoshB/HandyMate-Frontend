@@ -41,7 +41,7 @@ const MobileNav = () => {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav className="justify-content-end flex-grow-1 pe-3 px-3">
 
                   <Nav.Link className="nav-link" href="/">Services</Nav.Link>
 

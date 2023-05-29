@@ -12,7 +12,6 @@ const ServiceCard = ({
       <Link
         to={{
           pathname: `/services/${id}`,
-          search: `?rating=${rating}`,
         }}
         className="singlecard"
       >

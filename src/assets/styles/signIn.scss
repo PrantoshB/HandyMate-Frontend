@@ -1,21 +1,27 @@
 // aside {
 //   display: none;
 // }
-
-.side-image {
-  width: 50vw;
-  background-image: url("../../assets/images/signup.jpg");
+.login {
+  background-image: url("../../assets/images/signin.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.side-image2 {
-  width: 50vw;
-  background-image: url("../../assets/images/signin.jpg");
+.side-image {
+  background-image: url("../../assets/images/signup.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100%;
+}
+
+.side-image2 {
+  // background-image: url("../../assets/images/signin.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .sign__right {
@@ -88,7 +94,20 @@
   text-decoration: none;
 }
 
+.session-overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  height: 100%;
+}
+
 @media screen and (max-width: 768px) {
+  .session-overlay {
+    width: 100%;
+  }
+
+  .login {
+    width: 100vw;
+  }
+
   .side-image {
     height: 30vh;
     width: 100vw;
@@ -101,7 +120,6 @@
 
   .sign__right {
     margin: 0;
-    width: 100%;
     height: auto;
   }
 
