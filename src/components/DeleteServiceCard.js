@@ -1,20 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteService } from '../store/ServicesSlice';
 
-const DeleteServiceCard = ({ name, image, details }) => {
-  const dispatch = useDispatch();
-  const handleDeleteClick = (id) => {
-    dispatch(deleteService(id));
-  };
+const DeleteServiceCard = ({name, image}) => {
+
   return (
-    <div className="col-md-12 delete-card d-flex p-4 align-items-center">
-      <img src={image} alt="service" className="img-thumbnail rounded delete-img" />
-      <h4 className="mx-5 my-3">{name}</h4>
-      <p className="mx-3">{details}</p>
+    <div className="col-md-12 d-flex flex-column flex-md-row p-2 justify-content-between align-items-center delete-card">
+      <div className='d-flex flex-wrap align-items-center m-3'>
+      <img src={image} alt="service" className="img-thumbnail rounded m-2 delete-img" />
+      <h4 >{name}</h4>
+      </div>
       <div>
-        <button className="btn btn-danger delete-btn" type="button" onClick={handleDeleteClick}>Delete</button>
+        <button className="btn btn-danger delete-btn" type="button">Delete</button>
       </div>
     </div>
   );
