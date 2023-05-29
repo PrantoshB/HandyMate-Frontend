@@ -42,7 +42,7 @@ const Details = () => {
               </div>
 
               <div className="col-12">
-                <button type="button" className="details-btn" onClick={handleReturn} style={{ borderRadius: '50px 4px 4px 50px' }}>
+                <button type="button" className="details-btn" onClick={handleReturn}>
                   <FaAngleLeft />
                   {' '}
                   Return

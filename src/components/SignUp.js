@@ -76,12 +76,12 @@ const SignUp = () => {
                   onChange={handleChange}
                 />
               </div>
-              <button type="submit" className="btn">Signup</button>
+              <button type="submit" className="btn btn-primary rounded-pill px-4 py-2">Signup</button>
             </form>
             <div className="sign-in">
               <p>
                 Already have an account?
-                <Link to="/signin" className="session-link-btn"> Sign In</Link>
+                <Link to="/signin" className="btn btn-primary rounded-pill px-4 py-2"> Sign In</Link>
               </p>
               {error === false && <p>Please enter valid username and password</p>}
             </div>

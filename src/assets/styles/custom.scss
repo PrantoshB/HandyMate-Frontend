@@ -7,7 +7,7 @@ $gray-font: #adadaf;
 @import "./homepage.scss";
 @import "./details.scss";
 @import "./signIn.scss";
-
+@import "./nav.scss";
 :root {
   --primary-color: $primary;
   --gray-color-font: $gray-font;
@@ -144,7 +144,8 @@ $gray-font: #adadaf;
   }
 }
 
-.btn-sidebar-toggle {
+.btn-sidebar-toggle,
+.mobile-nav-toggle {
   position: absolute;
   top: 16px;
   left: 16px;
@@ -168,4 +169,8 @@ $gray-font: #adadaf;
 
 .container-main {
   min-height: 100vh;
+}
+
+.rounded-pill {
+  border-radius: 50px;
 }

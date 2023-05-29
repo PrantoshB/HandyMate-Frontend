@@ -1,0 +1,39 @@
+.signin,
+.signup {
+  aside,
+  .btn-sidebar-toggle {
+    display: none;
+  }
+}
+.mobile-nav {
+  display: block;
+}
+.main-nav,
+.btn-sidebar-toggle {
+  display: none;
+}
+
+.mobile-nav-container {
+  --bs-gutter-x: 0;
+}
+
+.site-logo-mobile {
+  height: 28px;
+  top: 21px;
+  transform: translateX(50%);
+  width: auto;
+  right: 48%;
+  display: block;
+}
+@media screen and (min-width: 1024px) {
+  .mobile-nav {
+    display: none;
+  }
+  .main-nav,
+  .btn-sidebar-toggle {
+    display: block;
+  }
+  .site-logo-mobile {
+    display: none;
+  }
+}

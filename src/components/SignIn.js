@@ -63,15 +63,15 @@ const SignIn = () => {
               </div>
               <button
                 type="submit"
-                className="btn"
+                className="btn btn-primary rounded-pill px-4 py-2"
               >
                 Login
               </button>
             </form>
             <div className="sign-in">
               <p>
-                Do not have an account?
-                <Link to="/signup" className="session-link-btn"> Sign Up</Link>
+                Do not have an account?&nbsp;
+                <Link to="/signup" className="btn btn-primary rounded-pill px-4 py-2">Sign Up</Link>
               </p>
               {error === false && <p>Please enter valid username and password</p>}
             </div>
