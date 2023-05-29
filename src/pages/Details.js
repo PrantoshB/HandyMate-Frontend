@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { fetchServices } from '../store/ServicesSlice';
 
 const Details = () => {
   const { id } = useParams();
-
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const rating = searchParams.get('rating');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const services = useSelector((state) => state.services.services);
   const service = services.find((service) => service.id === Number(id));
+
 
   useEffect(() => {
     dispatch(fetchServices());
@@ -64,7 +67,7 @@ const Details = () => {
             </tr>
             <tr>
               <td>Rating</td>
-              <td>{ }</td>
+              <td> <i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star-half-stroke" /> {rating}</td>
             </tr>
           </tbody>
         </table>
