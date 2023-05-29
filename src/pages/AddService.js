@@ -74,6 +74,9 @@ const AddService = () => {
       },
     );
   };
+  const handleCancelClick = () => {
+    navigate('/');
+  }
 
   return (
     <div className="col-md-10 container-fluid d-flex justify-content-center align-items-center add-service-container">
@@ -104,7 +107,7 @@ const AddService = () => {
           </div>
           <div className="col-md-12 d-flex justify-content-end g-3">
             <button type="button" className="col-md-5 btn add-btn mx-3" onClick={handleAddClick}>Add Service</button>
-            <button type="button" className="col-md-4 btn btn-outline-danger cancel-add-btn" onClick={handleAddClick}>Cancel</button>
+            <button type="button" className="col-md-4 btn btn-outline-danger cancel-add-btn" onClick={handleCancelClick}>Cancel</button>
           </div>
 
           {isUploading && (
