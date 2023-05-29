@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/hanymate-logo.png';
+import isAuthenticated from './auth';
 
 const Navbar = () => {
   const links = [
@@ -9,6 +10,12 @@ const Navbar = () => {
     { id: 4, name: 'Add Service', path: '/add-service' },
     { id: 5, name: 'Delete Service', path: '/delete-services' },
   ];
+  const navigate = useNavigate();
+  const isLoggedIn = isAuthenticated();
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/signin');
+  };
   return (
     <aside className="main-nav col-md-2">
       <div className="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar">
@@ -22,6 +29,20 @@ const Navbar = () => {
               <NavLink className="nav-link" to={link.path}>{link.name}</NavLink>
             </li>
           ))}
+          {isLoggedIn ? (
+            <li className="nav-item">
+              <button type="button" className="btn btn-link nav-link" onClick={handleLogout}>Logout</button>
+            </li>
+          ) : (
+            <>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/signin">Sign In</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/signup">Sign Up</NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </aside>
