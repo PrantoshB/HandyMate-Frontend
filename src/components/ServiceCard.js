@@ -10,7 +10,7 @@ const ServiceCard = ({
     <Link
       to={{
         pathname: `/services/${id}`,
-        state: { rating },
+        state: { name, image, details },
       }}
       className="singlecard"
     >

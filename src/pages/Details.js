@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { useParams, useNavigate } from 'react-router-dom';
 import { fetchServices } from '../store/ServicesSlice';
 
@@ -14,6 +15,7 @@ const Details = () => {
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);
+
 
   const handleReturn = () => {
     navigate('/');
@@ -41,21 +43,7 @@ const Details = () => {
       <div className="col-md-6 ">
         <h2>{service.name}</h2>
         <table className="table table-striped ">
-
-          {/* // return (
-  //   <div>
-  //     <div>
-  //       <p>
-  //         ID
-  //         {service.id}
-  //       </p>
-  //       <h1>Details</h1>
-  //       <img src={service.image} alt={service.name} />
-  //     </div>
-  //     <div>
-  //       <h2>{service.name}</h2>
-  //       <table> */}
-          <tbody>
+         <tbody>
             <tr>
               <td>Description</td>
               <td>{service.details}</td>
@@ -83,12 +71,9 @@ const Details = () => {
         </table>
         <button type="button" className="details-btn">Reserve</button>
       </div>
+      <button type="button">Reserve</button>
     </div>
   );
 };
 
 export default Details;
-
-Details.propTypes = {
-  // rating: PropTypes.number.isRequired,
-};

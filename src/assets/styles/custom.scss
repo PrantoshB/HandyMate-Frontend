@@ -1,9 +1,10 @@
 @import "~bootstrap/scss/bootstrap.scss";
-@import "./homepage.scss";
 
 @import './details.css'
+@import "./signIn.scss";
+@import "./homepage.scss";
 
-  :root {
+:root {
   --primary-color: #98bf11;
   --gray-color-font: #adadaf;
   --gray-color: #efefef;

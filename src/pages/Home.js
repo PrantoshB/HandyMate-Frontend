@@ -46,8 +46,8 @@ const Home = () => {
                 image={card.image}
                 details={card.details}
                 rating={
-                  Math.round((Math.random() * (5 - 4) + 4) * 10) / 10
-                }
+                    Math.round((Math.random() * (5 - 4) + 4) * 10) / 10
+                  }
                 price={card.price}
                 id={card.id}
               />
