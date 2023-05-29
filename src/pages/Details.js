@@ -70,7 +70,6 @@ const Details = () => {
         </table>
         <button type="button" className="details-btn">Reserve</button>
       </div>
-      <button type="button">Reserve</button>
     </div>
   );
 };
