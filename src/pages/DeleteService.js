@@ -17,6 +17,7 @@ const DeleteServices = () => {
 
           <DeleteServicesCard
             key={service.id}
+            id={service.id}
             name={service.name}
             image={service.image}
             details={service.details}
