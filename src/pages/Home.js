@@ -16,33 +16,45 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);
+
   const isMobile = window.innerWidth <= 768;
+
   return (
-    <div
-      className="col-md-10 carousel-container"
-      style={{
-        minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-      }}
-    >
-      <Swiper
-        className="service-list"
-        modules={[Navigation, A11y]}
-        spaceBetween={10}
-        slidesPerView={isMobile ? 1 : 3}
-        navigation
-      >
-        {cards.map((card) => (
-          <SwiperSlide key={card.id}>
-            <ServiceCard
+    <div className="home col-md-10">
+      <h1 className="bold-font homepage-heading">
+        OUR SERVICES
+      </h1>
+      <p className="gray-font">
+        Please select a HandyMate service
+      </p>
+      <hr className="dash home-dash" />
+      <div className="carousel-container col-md-12">
+
+        <Swiper
+          className="service-list col-md-10"
+          modules={[Navigation, A11y]}
+          spaceBetween={0}
+          slidesPerView={isMobile ? 1 : 3}
+          navigation
+        >
+          {cards.map((card) => (
+            <SwiperSlide
               key={card.id}
-              name={card.name}
-              id={card.id}
-              image={card.image}
-              details={card.details}
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            >
+              <ServiceCard
+                name={card.name}
+                image={card.image}
+                details={card.details}
+                rating={
+                  Math.round((Math.random() * (5 - 4) + 4) * 10) / 10
+                }
+                price={card.price}
+                id={card.id}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
