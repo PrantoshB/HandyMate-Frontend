@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addService } from '../store/ServicesSlice';
 import { storage } from '../firebaseConfig';
+import AddServiceIcon from '../assets/images/add-service-icon5.png';
 
 const AddService = () => {
   const [name, setName] = useState('');
@@ -65,6 +66,7 @@ const AddService = () => {
           setPrice('');
           setImage('');
           setDetails('');
+          setDuration('');
           setIsUploading(false);
           setUploadSuccess(true);
           navigate('/');
@@ -72,40 +74,66 @@ const AddService = () => {
       },
     );
   };
+  const handleCancelClick = () => {
+    navigate('/');
+  };
 
   return (
-    <form>
-      <div>
-        <input type="text" placeholder="Service Name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="float" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-        <input type="file" placeholder="Image" onChange={handleFileChange} />
-        <input type="textarea" placeholder="Details" value={details} onChange={(e) => setDetails(e.target.value)} />
-        <input type="number" placeholder="Duration in hours" value={duration} onChange={(e) => setDuration(e.target.value)} />
+    <div className="col-md-10 container-fluid d-flex justify-content-center align-items-center add-service-container">
+      <div className="d-flex flex-column m-5 p-5 align-items-center add-service-div">
+        <div className="d-sm-inline-flex align-items-center my-4">
+          <img src={AddServiceIcon} alt="add service icon" className="img-thumbnail add-service-icon" />
+          <h1 className="mx-3">Service</h1>
+        </div>
+
+        <form className="row g-4 add-service-form">
+          <div className="col-md-12">
+            <input type="text" placeholder="Service Type" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+
+          <div className="input-group col-md-12">
+            <span className="input-group-text add-price-input">$</span>
+            <input type="float" placeholder="Service Charge" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <span className="input-group-text add-price-input">.00</span>
+          </div>
+          <div className="col-md-12">
+            <input type="textarea" placeholder="Details" className="form-control" value={details} onChange={(e) => setDetails(e.target.value)} />
+          </div>
+          <div className="col-md-12">
+            <input type="file" className="form-control" id="inputGroupFile02" onChange={handleFileChange} />
+          </div>
+          <div className="col-md-4 d-flex">
+            <input type="number" placeholder="Duration" className="form-control" value={duration} onChange={(e) => setDuration(e.target.value)} />
+          </div>
+          <div className="col-md-12 d-flex justify-content-end g-3">
+            <button type="button" className="col-md-5 btn add-btn mx-3" onClick={handleAddClick}>Add Service</button>
+            <button type="button" className="col-md-4 btn btn-outline-danger cancel-add-btn" onClick={handleCancelClick}>Cancel</button>
+          </div>
+
+          {isUploading && (
+          <div>
+            <p>
+              Uploading:
+              {uploadProgress}
+              %
+            </p>
+          </div>
+          )}
+
+          {uploadSuccess && (
+          <div>
+            <p>File uploaded successfully!</p>
+          </div>
+          )}
+
+          {errorMessage && (
+          <div>
+            <p>{errorMessage}</p>
+          </div>
+          )}
+        </form>
       </div>
-      <button type="button" onClick={handleAddClick}>Add Service</button>
-
-      {isUploading && (
-        <div>
-          <p>
-            Uploading:
-            {uploadProgress}
-            %
-          </p>
-        </div>
-      )}
-
-      {uploadSuccess && (
-        <div>
-          <p>File uploaded successfully!</p>
-        </div>
-      )}
-
-      {errorMessage && (
-        <div>
-          <p>{errorMessage}</p>
-        </div>
-      )}
-    </form>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -33,9 +34,11 @@ const SignIn = () => {
 
   return (
     <section className="signin col-md-12">
+
       <div className="row col-md-12">
         <div className="side-image2 col-md-6" />
         <div className="sign__right">
+          <Link to="/"><FaHome className="home-icon" /></Link>
           <div className="input-box col-md-6">
             <div className="intro">
               <span className="line" />

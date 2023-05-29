@@ -1,13 +1,13 @@
 $primary: #98bf11 !default;
 $gray: #efefef;
 $gray-font: #adadaf;
-
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./reservation.scss";
 @import "./homepage.scss";
 @import "./details.scss";
 @import "./signIn.scss";
 @import "./nav.scss";
+@import "./delete-service-style.scss";
 :root {
   --primary-color: $primary;
   --gray-color-font: $gray-font;

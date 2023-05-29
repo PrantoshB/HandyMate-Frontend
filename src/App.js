@@ -8,6 +8,7 @@ import SignUp from './components/SignUp';
 import AddService from './pages/AddService';
 import Navbar from './components/Navbar';
 import Details from './pages/Details';
+import DeleteServices from './pages/DeleteService';
 import MobileNav from './components/MobileNav';
 
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/add-service" element={<AddService />} />
+          <Route path="/delete-services" element={<DeleteServices />} />
         </Routes>
       </BrowserRouter>
     </div>

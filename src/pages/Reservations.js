@@ -14,6 +14,8 @@ const Reservations = () => {
   const locations = useSelector((state) => state.locations.locations);
   const users = useSelector((state) => state.users.users);
 
+  const userId = localStorage.getItem('userId');
+
   useEffect(() => {
     dispatch(fetchReservations());
     dispatch(fetchServices());
@@ -41,14 +43,16 @@ const Reservations = () => {
     return user ? user.full_name : '';
   };
 
-  return (
-  // add reservation button with link to /reserve
-    <div className="col-md container-main d-flex flex-column reservations align-items-center p-3">
+  const userRole = localStorage.getItem('role');
+  const userReservations = userRole === 'admin'
+    ? reservations
+    : reservations.filter((reservation) => reservation.user_id === Number(userId));
 
+  return (
+    <div className="col-md container-main d-flex flex-column reservations align-items-center p-3">
       <div className="reservation-list container">
         <Link className="btn btn-success my-4 align-self-end" to="/reserve">Add Reservation</Link>
-        {
-        reservations.map((reservation) => (
+        {userReservations.map((reservation) => (
           <ReservationCard
             startDate={reservation.start_date}
             endDate={reservation.end_date}
@@ -59,8 +63,7 @@ const Reservations = () => {
             serviceImage={getServiceImage(reservation.service_id)}
             key={reservation.id}
           />
-        ))
-      }
+        ))}
       </div>
     </div>
   );

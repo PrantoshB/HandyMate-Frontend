@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 import { useNavigate, Link } from 'react-router-dom';
+import { FaHome } from 'react-icons/fa';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ const SignUp = () => {
       <div className="row">
         <div className="side-image" />
         <div className="sign__right">
+          <Link to="/"><FaHome className="home-icon" /></Link>
           <div className="input-box">
             <div className="intro">
               <span className="line" />
