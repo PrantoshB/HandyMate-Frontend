@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { fetchServices } from '../store/ServicesSlice';
 
 const Details = () => {
   const { id } = useParams();
 
-  const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const services = useSelector((state) => state.services.services);
   const service = services.find((service) => service.id === Number(id));
-
 
   useEffect(() => {
     dispatch(fetchServices());
@@ -31,7 +29,7 @@ const Details = () => {
         </div>
         <div className="row">
           <div className="col-12">
-            <button type="button" className="details-btn" onClick={handleReturn} style={{ marginLeft: "-15px" }}>
+            <button type="button" className="details-btn" onClick={handleReturn} style={{ marginLeft: '-15px' }}>
               {'<'}
               {' '}
               Return
@@ -39,8 +37,6 @@ const Details = () => {
           </div>
         </div>
       </div>
-
-
 
       <div className="col-md-6 ">
         <h2>{service.name}</h2>
