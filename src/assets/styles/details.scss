@@ -8,6 +8,7 @@
   cursor: pointer;
   margin-top: 20px;
   transition: all 0.3s ease-in-out;
+
   &:hover {
     background: darken($primary, 10%);
   }

@@ -14,17 +14,20 @@
   border-radius: 4px;
   padding: 16px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
   .image-and-text {
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: center;
+
     .service-thumb {
       height: 100px;
       width: 100px;
       object-fit: cover;
       object-position: center;
     }
+
     .reservation-card-details {
       text-align: center;
     }
@@ -111,9 +114,11 @@
     filter: invert(1);
   }
 }
+
 .service-image-in-form {
   width: 300px;
 }
+
 .service-name-in-form {
   font-weight: bold;
   background-color: $primary;
@@ -121,6 +126,7 @@
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   padding: 8px;
 }
+
 @media screen and (min-width: 1024px) {
   .reservation-card {
     flex-direction: row;
@@ -129,20 +135,24 @@
     border-radius: 4px;
     padding: 16px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
     .image-and-text {
       flex-direction: row;
       justify-content: flex-start;
       gap: 8px;
     }
+
     .service-thumb {
       height: 50px !important;
       width: 50px !important;
       object-fit: cover;
       object-position: center;
     }
+
     .reservation-card-details {
       text-align: left;
     }
+
     .card-column {
       display: none;
       //   display: flex;
