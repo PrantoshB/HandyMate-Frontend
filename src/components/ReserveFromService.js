@@ -89,8 +89,12 @@ const ReservationForm = () => {
           <div className="d-flex input-row align-items-center g-4">
             {/* <label htmlFor="serviceId">
               Service:
-              <input className="p-2 form-control" type="text"
-              value={service && service.name} disabled />
+              <input
+                className="p-2 form-control"
+                type="text"
+                value={service && service.name}
+                disabled
+              />
             </label> */}
             <label htmlFor="startDate">
               From:&nbsp;
