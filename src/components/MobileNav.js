@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
@@ -75,11 +74,6 @@ const MobileNav = () => {
       ))}
     </>
   );
-};
-
-MobileNav.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  toggleNav: PropTypes.func.isRequired,
 };
 
 export default MobileNav;
