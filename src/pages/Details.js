@@ -16,7 +16,6 @@ const Details = () => {
     dispatch(fetchServices());
   }, [dispatch]);
 
-
   const handleReturn = () => {
     navigate('/');
   };
@@ -43,7 +42,7 @@ const Details = () => {
       <div className="col-md-6 ">
         <h2>{service.name}</h2>
         <table className="table table-striped ">
-         <tbody>
+          <tbody>
             <tr>
               <td>Description</td>
               <td>{service.details}</td>
