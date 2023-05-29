@@ -14,7 +14,6 @@ const Details = () => {
   const services = useSelector((state) => state.services.services);
   const service = services.find((service) => service.id === Number(id));
 
-
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);
@@ -67,7 +66,16 @@ const Details = () => {
             </tr>
             <tr>
               <td>Rating</td>
-              <td> <i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star" style={{ color: "#008003", }} /><i className="fa-sharp fa-solid fa-star-half-stroke" /> {rating}</td>
+              <td>
+                {' '}
+                <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                <i className="fa-sharp fa-solid fa-star" style={{ color: '#008003' }} />
+                <i className="fa-sharp fa-solid fa-star-half-stroke" />
+                {' '}
+                {rating}
+              </td>
             </tr>
           </tbody>
         </table>

@@ -12,7 +12,7 @@ const ServiceCard = ({
       <Link
         to={{
           pathname: `/services/${id}`,
-          search: `?rating=${rating}`
+          search: `?rating=${rating}`,
         }}
         className="singlecard"
       >
@@ -35,7 +35,7 @@ const ServiceCard = ({
         <p className="gray-font service-details">{details}</p>
       </Link>
     </div>
-  )
+  );
 };
 
 export default ServiceCard;
