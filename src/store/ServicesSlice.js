@@ -37,4 +37,11 @@ const addService = (service) => async (dispatch) => {
   dispatch(fetchServices());
 };
 
-export { fetchServices, addService };
+const deleteService = (id) => async (dispatch) => {
+  await fetch(`http://localhost:3000/api/v1/services/${id}`, {
+    method: 'DELETE',
+  });
+  dispatch(fetchServices());
+};
+
+export { fetchServices, addService, deleteService };
