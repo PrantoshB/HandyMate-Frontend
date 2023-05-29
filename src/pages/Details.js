@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { fetchServices } from '../store/ServicesSlice';
-import '../assets/styles/details.css';
 
 const Details = () => {
   const { id } = useParams();
 
+  const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const services = useSelector((state) => state.services.services);
   const service = services.find((service) => service.id === Number(id));
+
 
   useEffect(() => {
     dispatch(fetchServices());
@@ -21,18 +22,43 @@ const Details = () => {
   };
   return (
     <div className="row">
-      <h1 id="details-heading">{service.name}</h1>
-      <div className="col-md-8 p-5">
-        <img src={service.image} alt={service.name} className="shadow-lg ml-md-4 img-fluid" />
-        <button type="button" className="btn btn-success rounded-pill mt-5" onClick={handleReturn}>
-          {'<'}
-          {' '}
-          Return
-        </button>
+      <h1 id="details-heading">Details</h1>
+      <div className="col-md-6 d-flex flex-column align-items-center">
+        <div className="row">
+          <div className="col-12 text-center">
+            <img src={service.image} alt={service.name} className="shadow-lg img-fluid mx-auto" />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <button type="button" className="details-btn" onClick={handleReturn} style={{ marginLeft: "-15px" }}>
+              {'<'}
+              {' '}
+              Return
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="col-md-4 ">
-        <h2>Details</h2>
+
+
+
+      <div className="col-md-6 ">
+        <h2>{service.name}</h2>
         <table className="table table-striped ">
+
+          {/* // return (
+  //   <div>
+  //     <div>
+  //       <p>
+  //         ID
+  //         {service.id}
+  //       </p>
+  //       <h1>Details</h1>
+  //       <img src={service.image} alt={service.name} />
+  //     </div>
+  //     <div>
+  //       <h2>{service.name}</h2>
+  //       <table> */}
           <tbody>
             <tr>
               <td>Description</td>
@@ -55,13 +81,18 @@ const Details = () => {
             </tr>
             <tr>
               <td>Rating</td>
+              <td>{ }</td>
             </tr>
           </tbody>
         </table>
-        <button type="button" className="btn btn-success rounded-pill">Reserve</button>
+        <button type="button" className="details-btn">Reserve</button>
       </div>
     </div>
   );
 };
 
 export default Details;
+
+Details.propTypes = {
+  // rating: PropTypes.number.isRequired,
+};
