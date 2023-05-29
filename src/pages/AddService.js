@@ -75,15 +75,15 @@ const AddService = () => {
   };
 
   return (
-    <div className="col-md-10 container add-service-div">
-      <div>
+    <div className="col-md-10 container-fluid d-flex justify-content-center align-items-center add-service-container">
+      <div className='d-flex flex-column m-5 p-5 align-items-center add-service-div'>
       <div className='d-sm-inline-flex align-items-center my-4'>
       <img src={AddServiceIcon} className='img-thumbnail add-service-icon' />
       <h1 className='mx-3'>Service</h1>
       </div>
-      </div>
+      
 
-    <form className="row g-3">
+    <form className="row g-4 add-service-form">
     <div className='col-md-12'>
         <input type="text" placeholder="Service Type" className='form-control' value={name} onChange={(e) => setName(e.target.value)} />
       </div>
@@ -99,13 +99,14 @@ const AddService = () => {
      <div className='col-md-12'>
         <input type="file"  className='form-control' id='inputGroupFile02' onChange={handleFileChange} />
      </div>
-     <div className='col-md-12'>
+     <div className='col-md-4 d-flex'>
         <input type="number" placeholder="Duration" className='form-control' value={duration} onChange={(e) => setDuration(e.target.value)} />
      </div>
      <div className='col-md-12 d-flex justify-content-end g-3'>
       <button type="button" className='col-md-5 btn add-btn mx-3' onClick={handleAddClick}>Add Service</button>
       <button type="button" className='col-md-4 btn btn-outline-danger cancel-add-btn' onClick={handleAddClick}>Cancel</button>
       </div>
+
     
 
       {isUploading && (
@@ -130,6 +131,7 @@ const AddService = () => {
         </div>
       )}
     </form>
+    </div>
     </div>
   );
 };
