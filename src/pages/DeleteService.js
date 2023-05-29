@@ -12,10 +12,9 @@ const DeleteServices = () => {
     dispatch(fetchServices());
   }, [dispatch]);
     return (
-        <div className='container'>
-            <h1>Delete Services</h1>
+        <div className='container-fluid p-5'>
             {services.map((service) => (
-          <div className='row' key={service.id}>
+          <div className='row g-3 p-3' key={service.id}>
            
               <DeleteServicesCard
               key={service.id}
