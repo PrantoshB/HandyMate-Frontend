@@ -6,6 +6,9 @@ $gray-font: #adadaf;
 @import "./reservation.scss";
 @import "./homepage.scss";
 
+@import "./details.css";
+@import "./signIn.scss";
+
 :root {
   --primary-color: $primary;
   --gray-color-font: $gray-font;
