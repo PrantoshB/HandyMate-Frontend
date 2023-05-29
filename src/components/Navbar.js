@@ -7,7 +7,7 @@ const Navbar = () => {
     { id: 2, name: 'Reserve', path: '/reserve' },
     { id: 3, name: 'My Reservations', path: '/reservations' },
     { id: 4, name: 'Add Service', path: '/add-service' },
-    { id: 5, name: 'Delete Service', path: '/' },
+    { id: 5, name: 'Delete Service', path: '/delete-services' },
   ];
   return (
     <aside className="main-nav col-md-2">
