@@ -59,7 +59,7 @@ const AddService = () => {
             price,
             image: downloadURL,
             details,
-            duration
+            duration,
           };
           dispatch(addService(newService));
           setName('');
@@ -76,7 +76,7 @@ const AddService = () => {
   };
   const handleCancelClick = () => {
     navigate('/');
-  }
+  };
 
   return (
     <div className="col-md-10 container-fluid d-flex justify-content-center align-items-center add-service-container">
