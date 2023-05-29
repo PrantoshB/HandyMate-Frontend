@@ -10,7 +10,7 @@
 }
 .add-service-div {
     width: 70%;
-    background-color: white;
+    background-color: var(--gray-color);
     border-radius: 1rem;
 }
 
@@ -21,23 +21,22 @@
 
 .add-service-form .form-control {
     border-radius: 2rem;
-    border-color: #97BF02;
+    border-color: var(--primary-color);
 }
 .add-price-input {
-    background-color: #97BF02;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--gray-color);
     border-radius: 2rem;
 }
 
 .add-btn {
-    background-color: #97BF02;
-    color: white;
-    border: 1px solid white;
+    background-color: var(--primary-color);
+    color: var(--gray-color);
     border-radius: 1rem;  
 }
 
 .add-btn:hover {
-    border: 1px solid #97BF02;
+    border: 1px solid var(--primary-color);
 }
 
 .cancel-add-btn {
