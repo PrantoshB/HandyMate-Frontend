@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./homepage.scss";
+@import "./add-service-style.scss";
+@import "./delete-service-style.scss";
 
 :root {
   --primary-color: #98bf11;
@@ -10,7 +12,6 @@
 #root {
   font-family: sans-serif;
 }
-@import "./add-service-style.scss";
 
 .site-logo {
   width: 100%;
