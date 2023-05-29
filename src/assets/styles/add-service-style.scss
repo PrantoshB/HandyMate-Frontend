@@ -1,16 +1,17 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 
-.add-service-div {
-    width: 50%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background-image: url("../images/add-service-bg.jpeg");
+.add-service-container {
+    background-image: url("../images/add-service-bg2.jpeg");
     background-repeat: no-repeat;
-    position: relative;
-    top: rem;
+    background-size: cover;
+    
+
+}
+.add-service-div {
+    width: 70%;
+    background-color: white;
+    border-radius: 1rem;
 }
 
 .add-service-icon {
@@ -18,9 +19,14 @@
     height: 3rem;
 }
 
+.add-service-form .form-control {
+    border-radius: 2rem;
+    border-color: #97BF02;
+}
 .add-price-input {
     background-color: #97BF02;
     color: white;
+    border-radius: 2rem;
 }
 
 .add-btn {
