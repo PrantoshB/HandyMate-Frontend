@@ -10,13 +10,25 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.service-thumb {
-  height: 50px;
-  width: 50px;
-  object-fit: cover;
-  object-position: center;
+  align-items: center;
+  border-radius: 4px;
+  padding: 16px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  .image-and-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    .service-thumb {
+      height: 100px;
+      width: 100px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .reservation-card-details {
+      text-align: center;
+    }
+  }
 }
 
 .reservation-form-body {
@@ -117,7 +129,15 @@
     border-radius: 4px;
     padding: 16px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-
+    .service-thumb {
+      height: 50px;
+      width: 50px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .reservation-card-details {
+      text-align: left;
+    }
     .card-column {
       display: none;
       //   display: flex;

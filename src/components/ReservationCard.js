@@ -14,9 +14,9 @@ const ReservationCard = ({
 
   return (
     <div className="reservation-card col-md-12">
-      <div className="d-flex justify-content-start align-items-center">
+      <div className="image-and-text d-flex justify-content-start align-items-center">
         <img src={serviceImage} alt={serviceName} className="service-thumb" />
-        <p className="my-0 mx-1">
+        <p className="my-0 mx-1 reservation-card-details">
           <strong>{serviceName}</strong>
           {' '}
           service reserved by
@@ -36,31 +36,7 @@ const ReservationCard = ({
           <strong>{locationName}</strong>
         </p>
       </div>
-      <p className="text-center m-0 card-column">
-        <span><strong>Service</strong></span>
-        {' '}
-        <span>{serviceName}</span>
-      </p>
-      <p className="text-center m-0 card-column">
-        <span><strong>User</strong></span>
-        {' '}
-        <span>{userName}</span>
-      </p>
-      <p className="text-center m-0 card-column">
-        <span><strong>Start Date</strong></span>
-        {' '}
-        <span>{startDate}</span>
-      </p>
-      <p className="text-center m-0 card-column">
-        <span><strong>End Date</strong></span>
-        {' '}
-        <span>{endDate}</span>
-      </p>
-      <p className="text-center m-0 card-column">
-        <span><strong>Location</strong></span>
-        {' '}
-        <span>{locationName}</span>
-      </p>
+
       <button type="button" className="btn btn-danger" onClick={handleCancel}>
         Cancel
       </button>
