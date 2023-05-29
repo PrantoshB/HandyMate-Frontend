@@ -59,6 +59,7 @@ const AddService = () => {
             price,
             image: downloadURL,
             details,
+            duration
           };
           dispatch(addService(newService));
           setName('');
