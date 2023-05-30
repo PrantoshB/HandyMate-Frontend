@@ -1,13 +1,13 @@
-import {render,cleanup} from '@testing-library/react';
-import SignIn from  '../__mock__/SignIn';
+import { render, cleanup } from '@testing-library/react';
+import SignIn from '../__mock__/SignIn';
 
-afterEach(()=>{
+afterEach(() => {
   cleanup();
 });
 
 describe('SignIn', () => {
-   it('SignIn renders correctly',()=>{
-     const signin= render(<SignIn/>);
-     expect(signin).toMatchSnapshot();
-   });
-    });
+  it('SignIn renders correctly', () => {
+    const signin = render(<SignIn />);
+    expect(signin).toMatchSnapshot();
+  });
+});

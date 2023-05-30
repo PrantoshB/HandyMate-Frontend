@@ -1,13 +1,13 @@
-import {render,cleanup} from '@testing-library/react';
-import DeleteServices from  '../__mock__/DeleteServices';
+import { render, cleanup } from '@testing-library/react';
+import DeleteServices from '../__mock__/DeleteServices';
 
-afterEach(()=>{
+afterEach(() => {
   cleanup();
 });
 
 describe('DeleteServices', () => {
-   it('DeleteServices renders correctly',()=>{
-     const deleteservices = render(<DeleteServices/>);
-     expect(deleteservices).toMatchSnapshot();
-   });
-    });
+  it('DeleteServices renders correctly', () => {
+    const deleteservices = render(<DeleteServices />);
+    expect(deleteservices).toMatchSnapshot();
+  });
+});

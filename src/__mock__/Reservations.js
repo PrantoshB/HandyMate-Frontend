@@ -7,32 +7,32 @@ import { fetchLocations } from '../store/LocationsSlice';
 import { fetchUsers } from '../store/UsersSlice';
 
 const Reservations = () => {
-const users = [{   
+  const users = [{
     full_name: 'User 1',
     email: 't@gmail.com',
     password: '123456',
     role: 'user',
     id: 1,
-    }]
-const locations = [{
+  }];
+  const locations = [{
     name: 'Location 1',
     id: 1,
-    }]
-    const services = [{
+  }];
+  const services = [{
     name: 'Service 1',
     image: 'https://res.cloudinary.com/dx0nauane/image/upload/v1624349663/Service%20Card%20Images/Service_1_1_xqjz3c.jpg',
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, sapien vitae aliquam dapibus, magna quam ultricies nunc, nec tincidunt nisl nunc vitae elit. ',
     price: 100,
     id: 1,
-    }]
-const reservations = [{
+  }];
+  const reservations = [{
     start_date: '2021-06-30T00:00:00.000Z',
     end_date: '2021-07-01T00:00:00.000Z',
     service_id: 1,
     user_id: 1,
     location_id: 1,
     id: 1,
-    }]
+  }];
 
   const userId = localStorage.getItem('userId');
 
@@ -63,23 +63,23 @@ const reservations = [{
 
   return (
     <BrowserRouter>
-    <div className="col-md col container-main d-flex flex-column reservations align-items-center p-3">
-      <div className="reservation-list container">
-        <Link className="btn btn-success my-4 align-self-end" to="/reserve">Add Reservation</Link>
-        {userReservations.map((reservation) => (
-          <ReservationCard
-            startDate={reservation.start_date}
-            endDate={reservation.end_date}
-            serviceName={getServiceName(reservation.service_id)}
-            userName={getUserName(reservation.user_id)}
-            locationName={getLocationName(reservation.location_id)}
-            reservationId={reservation.id}
-            serviceImage={getServiceImage(reservation.service_id)}
-            key={reservation.id}
-          />
-        ))}
+      <div className="col-md col container-main d-flex flex-column reservations align-items-center p-3">
+        <div className="reservation-list container">
+          <Link className="btn btn-success my-4 align-self-end" to="/reserve">Add Reservation</Link>
+          {userReservations.map((reservation) => (
+            <ReservationCard
+              startDate={reservation.start_date}
+              endDate={reservation.end_date}
+              serviceName={getServiceName(reservation.service_id)}
+              userName={getUserName(reservation.user_id)}
+              locationName={getLocationName(reservation.location_id)}
+              reservationId={reservation.id}
+              serviceImage={getServiceImage(reservation.service_id)}
+              key={reservation.id}
+            />
+          ))}
+        </div>
       </div>
-    </div>
     </BrowserRouter>
   );
 };
