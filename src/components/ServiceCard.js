@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+<<<<<<< HEAD
 const ServiceCard = ({
   name, image, details, rating, price, id,
 }) => (
@@ -32,6 +33,13 @@ const ServiceCard = ({
       </div>
       <p className="gray-font service-details">{details}</p>
     </Link>
+=======
+const ServiceCard = ({ name, image, details }) => (
+  <div className="slide">
+    <img src={image} alt={name} />
+    <h1>{name}</h1>
+    <p>{details}</p>
+>>>>>>> 9dfc3dd (Add slider in home page)
   </div>
 );
 
