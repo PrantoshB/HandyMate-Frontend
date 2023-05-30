@@ -44,8 +44,8 @@ const MobileNav = () => {
                   <img src={logo} className="site-logo" alt="logo" />
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3 px-3">
+              <Offcanvas.Body className="d-flex flex-column justify-content-between">
+                <Nav className="justify-content-start flex-grow-1 pe-3 px-3">
 
                   <Nav.Link className="nav-link" href="/">Services</Nav.Link>
 
