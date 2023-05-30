@@ -36,6 +36,7 @@ const Home = () => {
           spaceBetween={0}
           slidesPerView={isMobile ? 1 : 3}
           navigation
+          loop={true}
         >
           {cards.map((card) => (
             <SwiperSlide
