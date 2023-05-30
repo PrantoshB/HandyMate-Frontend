@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 
@@ -7,6 +7,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {
+  FaFacebook, FaTwitter, FaLinkedin, FaGithub, FaSignInAlt, FaSignOutAlt,
+} from 'react-icons/fa';
+import { AiOutlineUserAdd } from 'react-icons/ai';
 import isAuthenticated from './auth';
 import logo from '../assets/images/hanymate-logo.png';
 
@@ -66,7 +70,80 @@ const MobileNav = () => {
                     </>
                   )}
                 </Nav>
+                <div className="social-sharing p-3 d-flex flex-column mb-2 g-3">
+                  <ul className="d-flex justify-content-center g-4 logging p-0">
+                    {isLoggedIn ? (
+                      <li>
+                        <button type="button" className="logout btn btn-outline-danger btn-small" onClick={handleLogout}>
+                          <FaSignOutAlt />
+                          &nbsp;
+                          Logout
+                        </button>
+                      </li>
+                    ) : (
+                      <>
+                        <li>
+                          <Link to="/signin" className="btn btn-small btn-dark">
+                            <FaSignInAlt />
+                            &nbsp;
+                            Sign In
+                          </Link>
+                        </li>
+                        <li className="nav-item">
+                          <Link to="/signup" className="btn btn-small btn-dark">
+                            <AiOutlineUserAdd />
+                            &nbsp;
+                            Sign Up
+                          </Link>
+                        </li>
+                      </>
+                    )}
+                  </ul>
+                  <div className="d-flex justify-content-center g-4">
+                    <Link to="/" className="social-link">
+                      <FaFacebook />
+                    </Link>
+                    <Link to="/" className="social-link">
+                      <FaTwitter />
+                    </Link>
+                    <Link to="/" className="social-link">
+                      <FaLinkedin />
+                    </Link>
+                    <Link to="https://github.com/PrantoshB/HandyMate-Frontend" className="social-link">
+                      <FaGithub />
+                    </Link>
+                  </div>
+                  <p className="text-center">
+                    <small>
+                      &copy; 2023 by
+                      {' '}
+                      <strong>
+                        <span>
+                          <a href="https://github.com/PrantoshB">P</a>
+                        </span>
+&nbsp;
+                        <span>
+                          <a href="https://github.com/haliljon">H</a>
+                        </span>
+&nbsp;
+                        <span>
+                          <a href="https://github.com/utsargo">U</a>
+                        </span>
+&nbsp;
+                        <span>
+                          <a href="https://github.com/JacintaNgwu">J</a>
+                        </span>
+&nbsp;
+                        <span>
+                          <a href="https://github.com/yetemegn-telaye">Y</a>
+                        </span>
 
+                      </strong>
+                      {' '}
+                      Group
+                    </small>
+                  </p>
+                </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

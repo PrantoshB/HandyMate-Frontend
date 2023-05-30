@@ -34,6 +34,31 @@
   display: block;
 }
 
+.social-link {
+  color: #1c1c1c;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #1c1c1c;
+    transform: rotate(45deg);
+  }
+}
+
+.logging {
+  list-style-type: none;
+
+  li {
+    width: max-content;
+
+    a,
+    button {
+      font-size: small;
+      width: max-content;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .mobile-nav {
     display: none;
@@ -63,28 +88,6 @@
     &.active {
       color: white;
       background-color: darken($primary, 10%);
-    }
-  }
-
-  .social-link {
-    color: #1c1c1c;
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: #1c1c1c;
-      transform: rotate(45deg);
-    }
-  }
-
-  .logging {
-    list-style-type: none;
-
-    li {
-      a,
-      button {
-        font-size: small;
-      }
     }
   }
 }
