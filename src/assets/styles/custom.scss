@@ -9,8 +9,9 @@ $gray-font: #adadaf;
 @import "./signIn.scss";
 @import "./nav.scss";
 @import "./delete-service-style.scss";
+@import "./add-service-style.scss";
 
-:root {
+:root  {
   --primary-color: $primary;
   --gray-color-font: $gray-font;
   --gray-color: $gray;
