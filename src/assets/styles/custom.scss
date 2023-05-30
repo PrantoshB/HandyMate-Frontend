@@ -24,8 +24,9 @@ a {
   text-decoration: none;
   color: inherit;
 }
+.btn,
 button {
-  width: max-content;
+  width: max-content !important;
 }
 
 .main-nav {
