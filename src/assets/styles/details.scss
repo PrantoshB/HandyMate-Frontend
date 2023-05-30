@@ -1,0 +1,21 @@
+.details-btn {
+  background: $primary;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 10% 0;
+
+  &:hover {
+    background: darken($primary, 10%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .details-container {
+    margin-top: 25%;
+  }
+}

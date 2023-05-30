@@ -13,6 +13,7 @@ const AddService = () => {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [duration, setDuration] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -57,12 +58,14 @@ const AddService = () => {
             price,
             image: downloadURL,
             details,
+            duration,
           };
           dispatch(addService(newService));
           setName('');
           setPrice('');
           setImage('');
           setDetails('');
+          setDuration('');
           setIsUploading(false);
           setUploadSuccess(true);
           navigate('/');
@@ -70,39 +73,61 @@ const AddService = () => {
       },
     );
   };
+  const handleCancelClick = () => {
+    navigate('/');
+  };
 
   return (
-    <form>
-      <div>
-        <input type="text" placeholder="Service Name" value={name} onChange={(e) => setName(e.target.value)} />
-        <input type="float" placeholder="Price" value={price} onChange={(e) => setPrice(e.target.value)} />
-        <input type="file" placeholder="Image" onChange={handleFileChange} />
-        <input type="textarea" placeholder="Details" value={details} onChange={(e) => setDetails(e.target.value)} />
+    <div className="col-md col container-fluid d-flex justify-content-center align-items-center add-service-container">
+      <div className="d-flex flex-column m-5 align-items-center add-service-div">
+        <h2 className="text-white w-100 text-center my-3">Add New Service</h2>
+
+        <form className="row g-4 add-service-form">
+          <div className="col-md-12">
+            <input type="text" placeholder="Service Type" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+
+          <div className="input-group col-md-12">
+            <span className="input-group-text add-price-input">$</span>
+            <input type="float" placeholder="Service Charge" className="form-control" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <span className="input-group-text add-price-input">.00</span>
+          </div>
+          <div className="col-md-12">
+            <input type="textarea" placeholder="Details" className="form-control" value={details} onChange={(e) => setDetails(e.target.value)} />
+          </div>
+          <div className="col-md-12 d-flex flex-md-row flex-column justify-content-between g-4">
+            <input type="file" className="form-control" id="inputGroupFile02" onChange={handleFileChange} />
+            <input type="number" placeholder="Duration" className="form-control" value={duration} onChange={(e) => setDuration(e.target.value)} />
+          </div>
+          <div className="col-md-12 d-flex justify-content-end g-3">
+            <button type="button" className="col-md-5 btn add-btn mx-3" onClick={handleAddClick}>Add Service</button>
+            <button type="button" className="col-md-4 btn btn-danger cancel-add-btn" onClick={handleCancelClick}>Cancel</button>
+          </div>
+
+          {isUploading && (
+          <div>
+            <p>
+              Uploading:
+              {uploadProgress}
+              %
+            </p>
+          </div>
+          )}
+
+          {uploadSuccess && (
+          <div>
+            <p>File uploaded successfully!</p>
+          </div>
+          )}
+
+          {errorMessage && (
+          <div>
+            <p>{errorMessage}</p>
+          </div>
+          )}
+        </form>
       </div>
-      <button type="button" onClick={handleAddClick}>Add Service</button>
-
-      {isUploading && (
-        <div>
-          <p>
-            Uploading:
-            {uploadProgress}
-            %
-          </p>
-        </div>
-      )}
-
-      {uploadSuccess && (
-        <div>
-          <p>File uploaded successfully!</p>
-        </div>
-      )}
-
-      {errorMessage && (
-        <div>
-          <p>{errorMessage}</p>
-        </div>
-      )}
-    </form>
+    </div>
   );
 };
 
