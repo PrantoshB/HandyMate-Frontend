@@ -72,6 +72,7 @@ const ReservationForm = () => {
                     </option>
                   ))}
                 </select>
+                <i className="fa-solid fa-angle-down" />
               </div>
             </label>
           </div>
@@ -89,6 +90,7 @@ const ReservationForm = () => {
                     </option>
                   ))}
                 </select>
+                <i className="fa-solid fa-angle-down" />
               </div>
             </label>
             <label htmlFor="startDate">

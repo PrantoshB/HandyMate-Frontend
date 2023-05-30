@@ -187,3 +187,11 @@ button {
 .rounded-pill {
   border-radius: 50px;
 }
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
