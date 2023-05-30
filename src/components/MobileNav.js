@@ -61,14 +61,6 @@ const MobileNav = () => {
                     <Nav.Link className="nav-link" href="/delete-service">Delete Service</Nav.Link>
                   </>
                   )}
-                  {isLoggedIn ? (
-                    <Nav.Link className="nav-link" href="/signin" onClick={handleLogout}>Logout</Nav.Link>
-                  ) : (
-                    <>
-                      <Nav.Link className="nav-link" href="/signin">Sign In</Nav.Link>
-                      <Nav.Link className="nav-link" href="/signup">Sign Up</Nav.Link>
-                    </>
-                  )}
                 </Nav>
                 <div className="social-sharing p-3 d-flex flex-column mb-2 g-3">
                   <ul className="d-flex justify-content-center g-4 logging p-0">
