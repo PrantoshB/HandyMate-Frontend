@@ -13,12 +13,12 @@ const DeleteServiceCard = ({ id, name, image }) => {
   };
 
   return (
-    <div className="col-md-12 d-flex flex-column flex-md-row p-2 justify-content-between align-items-center delete-card">
-      <div className="d-flex flex-wrap align-items-center m-3">
+    <div className="col-md-12 d-flex flex-column flex-md-row p-2 justify-content-between align-items-center delete-card rounded">
+      <div className="d-flex flex-wrap align-items-center m-1">
         <img src={image} alt="service" className="img-thumbnail rounded m-2 delete-img" />
         <h4>{name}</h4>
       </div>
-      <div>
+      <div className="px-2">
         {showConfirmation ? (
           <div className="confirmation-message d-flex flex-column align-items-end">
             <p>
@@ -28,10 +28,10 @@ const DeleteServiceCard = ({ id, name, image }) => {
               ? This action cannot be undone.
             </p>
             <div className="d-flex g-2 justify-content-end">
-              <button className="btn btn-danger" type="button" onClick={handleDeleteClick}>
+              <button className="btn btn-outline-danger" type="button" onClick={handleDeleteClick}>
                 Confirm Delete
               </button>
-              <button className="btn btn-secondary" type="button" onClick={() => setShowConfirmation(false)}>
+              <button className="btn btn-outline-secondary" type="button" onClick={() => setShowConfirmation(false)}>
                 Cancel
               </button>
             </div>

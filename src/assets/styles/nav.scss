@@ -49,8 +49,11 @@
   }
 
   .nav-link {
-    padding: 8px 16px;
-    color: darken($primary, 10%);
+    padding: 8px 24px;
+    color: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
 
     &:hover {
       color: white;
@@ -60,6 +63,28 @@
     &.active {
       color: white;
       background-color: darken($primary, 10%);
+    }
+  }
+
+  .social-link {
+    color: #1c1c1c;
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: #1c1c1c;
+      transform: rotate(45deg);
+    }
+  }
+
+  .logging {
+    list-style-type: none;
+
+    li {
+      a,
+      button {
+        font-size: small;
+      }
     }
   }
 }

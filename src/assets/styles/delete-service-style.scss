@@ -8,6 +8,7 @@
   width: 70px;
   height: 70px;
   cursor: pointer;
+  transition: 300ms ease;
 
   &:hover {
     transform: scale(1.2);
