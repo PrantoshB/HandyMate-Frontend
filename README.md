@@ -41,11 +41,14 @@
   </ul>
 </details>
 
+### App Screenshot
+![screenshot](https://github.com/PrantoshB/HandyMate-Backend/blob/dev/screenshot.jpg)
 
-## 🚀 Live Demo <a name="live-demo"></a>
+### Back-end Repository
+- Here is the link of the [Back-End](https://github.com/PrantoshB/HandyMate-Backend)
 
-
-- [Live Demo Link](#)
+### Initial State of Kanban Board
+![kanban](https://user-images.githubusercontent.com/6623974/238977867-a2ed06f6-9726-4986-8cd5-add65c82d7d2.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
