@@ -16,6 +16,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchServices());
   }, [dispatch]);
+<<<<<<< HEAD
 
   const isMobile = window.innerWidth <= 768;
 
@@ -52,6 +53,49 @@ const Home = () => {
           ))}
         </Swiper>
       </div>
+=======
+  const isMobile = window.innerWidth <= 768;
+  return (
+<<<<<<< HEAD
+    <div>
+      {
+        cards.map((card) => (
+          <ServiceCard
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            image={card.image}
+            details={card.details}
+          />
+        ))
+      }
+=======
+    <div
+      className="col-md-10 carousel-container"
+      style={{
+        minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+      }}
+    >
+      <Swiper
+        className="service-list"
+        modules={[Navigation, A11y]}
+        spaceBetween={10}
+        slidesPerView={isMobile ? 1 : 3}
+        navigation
+      >
+        {cards.map((card) => (
+          <SwiperSlide key={card.id}>
+            <ServiceCard
+              key={card.id}
+              name={card.name}
+              image={card.image}
+              details={card.details}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+>>>>>>> 9dfc3dd (Add slider in home page)
+>>>>>>> dev
     </div>
   );
 };
