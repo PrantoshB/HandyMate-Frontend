@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
 import Container from 'react-bootstrap/Container';
-
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {
-  FaFacebook, FaTwitter, FaLinkedin, FaGithub, FaSignInAlt, FaSignOutAlt,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaSignInAlt,
+  FaSignOutAlt,
 } from 'react-icons/fa';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import isAuthenticated from './auth';
@@ -19,25 +21,37 @@ const MobileNav = () => {
   const isLoggedIn = isAuthenticated();
   const isAdmin = localStorage.getItem('role') === 'admin';
 
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
+
   const handleLogout = () => {
     localStorage.clear();
     navigate('/signin');
   };
 
+  const handleOffcanvasClose = () => {
+    setShowOffcanvas(false);
+  };
+
   return (
     <>
-
       {[false].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3 mobile-nav">
+        <Navbar
+          key={expand}
+          bg="light"
+          expand={expand}
+          className="mb-3 mobile-nav"
+        >
           <Container className="mobile-nav-container" fluid>
-
-            <Navbar.Toggle className="mobile-nav-toggle" aria-controls={`offcanvasNavbar-expand-${expand}`} />
-
+            <Navbar.Toggle
+              className="mobile-nav-toggle"
+              aria-controls={`offcanvasNavbar-expand-${expand}`}
+              onClick={() => setShowOffcanvas(true)}
+            />
             <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              show={showOffcanvas}
+              onHide={handleOffcanvasClose}
               placement="start"
-
+              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
@@ -46,27 +60,59 @@ const MobileNav = () => {
               </Offcanvas.Header>
               <Offcanvas.Body className="d-flex flex-column justify-content-between">
                 <Nav className="justify-content-start flex-grow-1 pe-3 px-3">
-
-                  <Nav.Link className="nav-link" href="/">Services</Nav.Link>
-
+                  <Nav.Link
+                    className="nav-link"
+                    onClick={handleOffcanvasClose}
+                    href="/"
+                  >
+                    Services
+                  </Nav.Link>
                   {isLoggedIn && (
-                  <>
-                    <Nav.Link className="nav-link" href="/reserve">Reserve</Nav.Link>
-                    <Nav.Link className="nav-link" href="/reservations">My Reservations</Nav.Link>
-                  </>
+                    <>
+                      <Nav.Link
+                        className="nav-link"
+                        onClick={handleOffcanvasClose}
+                        href="/reserve"
+                      >
+                        Reserve
+                      </Nav.Link>
+                      <Nav.Link
+                        className="nav-link"
+                        onClick={handleOffcanvasClose}
+                        href="/reservations"
+                      >
+                        My Reservations
+                      </Nav.Link>
+                    </>
                   )}
                   {isLoggedIn && isAdmin && (
-                  <>
-                    <Nav.Link className="nav-link" href="/add-service">Add Service</Nav.Link>
-                    <Nav.Link className="nav-link" href="/delete-service">Delete Service</Nav.Link>
-                  </>
+                    <>
+                      <Nav.Link
+                        className="nav-link"
+                        onClick={handleOffcanvasClose}
+                        href="/add-service"
+                      >
+                        Add Service
+                      </Nav.Link>
+                      <Nav.Link
+                        className="nav-link"
+                        onClick={handleOffcanvasClose}
+                        href="/delete-service"
+                      >
+                        Delete Service
+                      </Nav.Link>
+                    </>
                   )}
                 </Nav>
                 <div className="social-sharing p-3 d-flex flex-column mb-2 g-3">
                   <ul className="d-flex justify-content-center g-4 logging p-0">
                     {isLoggedIn ? (
                       <li>
-                        <button type="button" className="logout btn btn-outline-danger btn-small" onClick={handleLogout}>
+                        <button
+                          type="button"
+                          className="logout btn btn-outline-danger btn-small"
+                          onClick={handleLogout}
+                        >
                           <FaSignOutAlt />
                           &nbsp;
                           Logout
@@ -75,14 +121,22 @@ const MobileNav = () => {
                     ) : (
                       <>
                         <li>
-                          <Link to="/signin" className="btn btn-small btn-dark">
+                          <Link
+                            to="/signin"
+                            className="btn btn-small btn-dark"
+                            onClick={handleOffcanvasClose}
+                          >
                             <FaSignInAlt />
                             &nbsp;
                             Sign In
                           </Link>
                         </li>
                         <li className="nav-item">
-                          <Link to="/signup" className="btn btn-small btn-dark">
+                          <Link
+                            to="/signup"
+                            className="btn btn-small btn-dark"
+                            onClick={handleOffcanvasClose}
+                          >
                             <AiOutlineUserAdd />
                             &nbsp;
                             Sign Up
@@ -101,7 +155,10 @@ const MobileNav = () => {
                     <Link to="/" className="social-link">
                       <FaLinkedin />
                     </Link>
-                    <Link to="https://github.com/PrantoshB/HandyMate-Frontend" className="social-link">
+                    <Link
+                      to="https://github.com/PrantoshB/HandyMate-Frontend"
+                      className="social-link"
+                    >
                       <FaGithub />
                     </Link>
                   </div>
@@ -113,23 +170,22 @@ const MobileNav = () => {
                         <span>
                           <a href="https://github.com/PrantoshB">P</a>
                         </span>
-&nbsp;
+                        &nbsp;
                         <span>
                           <a href="https://github.com/haliljon">H</a>
                         </span>
-&nbsp;
+                        &nbsp;
                         <span>
                           <a href="https://github.com/utsargo">U</a>
                         </span>
-&nbsp;
+                        &nbsp;
                         <span>
                           <a href="https://github.com/JacintaNgwu">J</a>
                         </span>
-&nbsp;
+                        &nbsp;
                         <span>
                           <a href="https://github.com/yetemegn-telaye">Y</a>
                         </span>
-
                       </strong>
                       {' '}
                       Group
