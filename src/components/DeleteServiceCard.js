@@ -22,10 +22,8 @@ const DeleteServiceCard = ({ id, name, image }) => {
         {showConfirmation ? (
           <div className="confirmation-message d-flex flex-column align-items-end">
             <p>
-              Are you sure you want to delete the service
-              {' '}
-              {name}
-              ? This action cannot be undone.
+              Are you sure?
+              This will permanently delete the service and it&apos;s reservations.
             </p>
             <div className="d-flex g-2 justify-content-end">
               <button className="btn btn-outline-danger" type="button" onClick={handleDeleteClick}>

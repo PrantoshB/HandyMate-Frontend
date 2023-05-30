@@ -14,7 +14,7 @@ import {
 } from 'react-icons/fa';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import isAuthenticated from './auth';
-import logo from '../assets/images/hanymate-logo.png';
+import logo from '../assets/images/handymate-logo.png';
 
 const MobileNav = () => {
   const navigate = useNavigate();
