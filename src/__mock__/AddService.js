@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { storage } from '../firebaseConfig';
-import AddServiceIcon from '../assets/images/add-service-icon5.png';
 
 const AddService = () => {
   const [name, setName] = useState('');
@@ -79,7 +78,6 @@ const AddService = () => {
       <div className="col-md col container-fluid d-flex justify-content-center align-items-center add-service-container">
         <div className="d-flex flex-column m-5 p-5 align-items-center add-service-div">
           <div className="d-sm-inline-flex align-items-center my-4">
-            <img src={AddServiceIcon} alt="add service icon" className="img-thumbnail add-service-icon" />
             <h1 className="mx-3">Service</h1>
           </div>
 
