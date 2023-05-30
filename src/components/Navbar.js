@@ -47,7 +47,7 @@ const Navbar = ({ sidebarOpen }) => {
               <NavLink className="nav-link" to="/add-service">Add Service</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/delete-service">Delete Service</NavLink>
+              <NavLink className="nav-link" to="/delete-services">Delete Service</NavLink>
             </li>
           </>
           )}
