@@ -59,7 +59,7 @@ const MobileNav = () => {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body className="d-flex flex-column justify-content-between">
-                <Nav className="justify-content-start flex-grow-1 pe-3 px-3">
+                <Nav className="justify-content-start flex-grow-1 px-4 mt-5">
                   <Nav.Link
                     className="nav-link"
                     onClick={handleOffcanvasClose}

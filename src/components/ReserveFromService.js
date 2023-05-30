@@ -52,7 +52,7 @@ const ReservationForm = () => {
       <div className="reservation-form-overlay col-md p-2 m-0 d-flex flex-column align-items-center justify-content-center">
 
         <h1 className="heading text-light text-uppercase text-center">
-          Create New Reservation for a
+          Create New Reservation for
           {' '}
           <br />
           {' '}
@@ -83,19 +83,11 @@ const ReservationForm = () => {
                     </option>
                   ))}
                 </select>
+                <i className="fa-solid fa-angle-down" />
               </div>
             </label>
           </div>
           <div className="d-flex input-row align-items-center g-4">
-            {/* <label htmlFor="serviceId">
-              Service:
-              <input
-                className="p-2 form-control"
-                type="text"
-                value={service && service.name}
-                disabled
-              />
-            </label> */}
             <label htmlFor="startDate">
               From:&nbsp;
               <input

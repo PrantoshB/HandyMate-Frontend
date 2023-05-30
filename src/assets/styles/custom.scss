@@ -11,7 +11,7 @@ $gray-font: #adadaf;
 @import "./delete-service-style.scss";
 @import "./add-service-style.scss";
 
-:root  {
+:root {
   --primary-color: $primary;
   --gray-color-font: $gray-font;
   --gray-color: $gray;
@@ -25,6 +25,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 .btn,
 button {
   width: max-content !important;
@@ -185,4 +186,12 @@ button {
 
 .rounded-pill {
   border-radius: 50px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
