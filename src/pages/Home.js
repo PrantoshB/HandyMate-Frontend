@@ -20,7 +20,7 @@ const Home = () => {
   const isMobile = window.innerWidth <= 768;
 
   return (
-    <div className="home col-md">
+    <div className="home col-md col">
       <h1 className="bold-font homepage-heading">
         OUR SERVICES
       </h1>

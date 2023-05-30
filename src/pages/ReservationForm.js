@@ -52,7 +52,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="col-md container-main reservation-form-body p-0">
+    <div className="col-md col container-main reservation-form-body p-0">
       <div className="reservation-form-overlay col-md p-2 m-0 d-flex flex-column align-items-center justify-content-center">
         <h1 className="heading text-light text-uppercase text-center">Create New Reservation</h1>
         <hr className="w-50 border-top-2 border-light" />

@@ -30,7 +30,7 @@ const Details = () => {
   return (
     <>
       {!showForm ? (
-        <div className="d-flex flex-column align-items-center col-md col-sm container-main justify-content-center p-4">
+        <div className="d-flex flex-column align-items-center col-md col container-main justify-content-center p-4">
 
           <div className="container d-flex flex-row-md flex-column-sm justify-content-between">
             <div className="col-md-6 d-flex flex-column align-items-center">
