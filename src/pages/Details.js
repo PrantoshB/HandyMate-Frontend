@@ -30,9 +30,9 @@ const Details = () => {
   return (
     <>
       {!showForm ? (
-        <div className="d-flex flex-column align-items-center col-md col container-main justify-content-center p-4">
+        <div className="d-flex flex-column align-items-center col-md col container-main details-container justify-content-center px-2">
 
-          <div className="container d-flex flex-row-md flex-column-sm justify-content-between">
+          <div className="container d-flex flex-md-row flex-sm-column flex-column">
             <div className="col-md-6 d-flex flex-column align-items-center">
               <div className="row">
                 <div className="col-12 text-center">
@@ -40,17 +40,16 @@ const Details = () => {
                 </div>
               </div>
 
-              <div className="col-12 mt-5">
+              <div className="col-12">
                 <button type="button" className="details-btn" onClick={handleReturn}>
                   <FaAngleLeft />
                   {' '}
                   Return
                 </button>
               </div>
-
             </div>
 
-            <div className="col-md-6 ">
+            <div className="col-md-6 d-flex flex-column align-items-center">
               <h2>{service.name}</h2>
               <table className="table table-striped ">
                 <tbody>
