@@ -7,12 +7,11 @@ const ServiceCard = ({
 }) => {
   const rating = Math.round((Math.random() * (5 - 4) + 4) * 10) / 10;
 
-  return (
+ return (
     <div>
       <Link
         to={{
           pathname: `/services/${id}`,
-          search: `?rating=${rating}`,
         }}
         className="singlecard"
       >
