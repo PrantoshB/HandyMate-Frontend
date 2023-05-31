@@ -27,6 +27,9 @@ const SignUp = () => {
         },
       });
       localStorage.setItem('token', response.headers.authorization);
+      localStorage.setItem('role', response.data.data.role);
+      localStorage.setItem('userId', response.data.data.id);
+      localStorage.setItem('full_name', response.data.data.full_name);
       navigate('/');
     } catch (error) {
       const { message } = error.response.data;
