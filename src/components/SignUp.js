@@ -26,10 +26,11 @@ const SignUp = () => {
           password: formData.password,
         },
       });
-      console.log(response.data);
+      localStorage.setItem('token', response.headers.authorization);
       navigate('/');
     } catch (error) {
-      console.error(error);
+      const { message } = error.response.data;
+      document.getElementById('show-error').innerHTML = message;
     }
   };
 
@@ -82,6 +83,7 @@ const SignUp = () => {
               Already have an account?&nbsp;
               <Link to="/signin" className="session-link-btn">Sign In</Link>
             </p>
+            {error === true && <p id="show-error" />}
             {error === false && <p>Please enter valid username and password</p>}
           </div>
         </div>

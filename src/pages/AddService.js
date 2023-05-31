@@ -100,13 +100,13 @@ const AddService = () => {
             <input type="number" placeholder="Duration" className="form-control" value={duration} onChange={(e) => setDuration(e.target.value)} />
           </div>
           <div className="col-md-12 d-flex justify-content-end g-3">
-            <button type="button" className="col-md-5 btn add-btn mx-3" onClick={handleAddClick}>Add Service</button>
-            <button type="button" className="col-md-4 btn btn-danger cancel-add-btn" onClick={handleCancelClick}>Cancel</button>
+            <button type="button" className="col-md-5 btn btn-light text-success rounded-pill mx-3" onClick={handleAddClick}>Add Service</button>
+            <button type="button" className="col-md-4 btn btn-danger rounded-pill" onClick={handleCancelClick}>Cancel</button>
           </div>
 
           {isUploading && (
           <div>
-            <p>
+            <p className="text-light">
               Uploading:
               {uploadProgress}
               %

@@ -15,7 +15,7 @@ const ServiceCard = ({
         }}
         className="singlecard"
       >
-        <img src={image} alt={name} />
+        <img src={image} alt={name} className="service-image" />
         <h4 className="bold-font service-name">{name}</h4>
         <hr className="dash" />
         <div className="service-rating-price">

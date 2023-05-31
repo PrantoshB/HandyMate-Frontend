@@ -27,7 +27,8 @@ const SignIn = () => {
         navigate('/');
       })
       .catch((error) => {
-        console.error(error);
+        const { message } = error.response.data;
+        document.getElementById('show-error').innerHTML = message;
       });
   };
 
@@ -72,6 +73,7 @@ const SignIn = () => {
               Do not have an account?&nbsp;
               <Link to="/signup" className="session-link-btn">Sign Up</Link>
             </p>
+            {error === true && <p id="show-error" />}
             {error === false && <p>Please enter valid username and password</p>}
           </div>
         </div>

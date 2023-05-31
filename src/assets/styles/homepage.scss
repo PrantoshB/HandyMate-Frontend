@@ -41,12 +41,11 @@
 
   img {
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top center;
   }
 }
-
-// aside {
-//   display: none;
-// }
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -101,7 +100,7 @@ i {
 }
 
 .service-name {
-  margin-top: -5%;
+  margin-top: 16px;
   background-color: rgba(255, 255, 255, 0.75);
   padding: 0 4px;
 }
