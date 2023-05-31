@@ -14,11 +14,6 @@ Object {
           <div
             class="d-sm-inline-flex align-items-center my-4"
           >
-            <img
-              alt="add service icon"
-              class="img-thumbnail add-service-icon"
-              src="add-service-icon5.png"
-            />
             <h1
               class="mx-3"
             >
@@ -118,11 +113,6 @@ Object {
         <div
           class="d-sm-inline-flex align-items-center my-4"
         >
-          <img
-            alt="add service icon"
-            class="img-thumbnail add-service-icon"
-            src="add-service-icon5.png"
-          />
           <h1
             class="mx-3"
           >
