@@ -14,6 +14,14 @@
   }
 }
 
+.service-details-image {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: top center;
+}
+
 @media screen and (max-width: 768px) {
   .details-container {
     margin-top: 25%;
