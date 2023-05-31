@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter, Routes, Route,
+} from 'react-router-dom';
 import Home from './pages/Home';
 import Reservations from './pages/Reservations';
 import ReservationForm from './pages/ReservationForm';
@@ -10,6 +12,7 @@ import Navbar from './components/Navbar';
 import Details from './pages/Details';
 import DeleteServices from './pages/DeleteService';
 import MobileNav from './components/MobileNav';
+import PrivateRoute from './PrivateRoute';
 
 const App = () => {
   useEffect(() => {
@@ -35,18 +38,61 @@ const App = () => {
         <span className="hamburger-icon" />
       </button>
       <BrowserRouter>
-        <Navbar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
-        <MobileNav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route exact path="/services/:id" element={<Details />} />
-          <Route path="/reservations" element={<Reservations />} />
-          <Route path="/reserve" element={<ReservationForm />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/add-service" element={<AddService />} />
-          <Route path="/delete-services" element={<DeleteServices />} />
-        </Routes>
+        <>
+          <Navbar sidebarOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+          <MobileNav />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              exact
+              path="/reservations"
+              element={<PrivateRoute />}
+            >
+              <Route
+                exact
+                path="/reservations"
+                element={<Reservations />}
+              />
+            </Route>
+            <Route
+              exact
+              path="/reserve"
+              element={<PrivateRoute />}
+            >
+              <Route
+                exact
+                path="/reserve"
+                element={<ReservationForm />}
+              />
+            </Route>
+            <Route
+              exact
+              path="/add-service"
+              element={<PrivateRoute />}
+            >
+              <Route
+                exact
+                path="/add-service"
+                element={<AddService />}
+              />
+            </Route>
+            <Route
+              exact
+              path="/delete-services"
+              element={<PrivateRoute />}
+            >
+              <Route
+                exact
+                path="/delete-services"
+                element={<DeleteServices />}
+              />
+            </Route>
+            <Route exact path="/services/:id" element={<Details />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+
+          </Routes>
+        </>
       </BrowserRouter>
     </div>
   );
