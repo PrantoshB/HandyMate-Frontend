@@ -111,7 +111,10 @@ const MobileNav = () => {
                         <button
                           type="button"
                           className="logout btn btn-outline-danger btn-small"
-                          onClick={handleLogout}
+                          onClick={() => {
+                            handleOffcanvasClose();
+                            handleLogout();
+                          }}
                         >
                           <FaSignOutAlt />
                           &nbsp;
