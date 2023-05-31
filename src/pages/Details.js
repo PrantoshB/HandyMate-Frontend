@@ -36,7 +36,7 @@ const Details = () => {
             <div className="col-md-6 d-flex flex-column align-items-center">
               <div className="row">
                 <div className="col-12 text-center">
-                  <img src={service.image} alt={service.name} className="shadow-lg img-fluid mx-auto" />
+                  <img src={service.image} alt={service.name} className="shadow-lg img-fluid mx-auto service-details-image" />
                 </div>
               </div>
 
