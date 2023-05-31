@@ -13,6 +13,7 @@ import Details from './pages/Details';
 import DeleteServices from './pages/DeleteService';
 import MobileNav from './components/MobileNav';
 import PrivateRoute from './PrivateRoute';
+import AdminRoute from './AdminRoute';
 
 const App = () => {
   useEffect(() => {
@@ -68,7 +69,7 @@ const App = () => {
             <Route
               exact
               path="/add-service"
-              element={<PrivateRoute />}
+              element={<AdminRoute />}
             >
               <Route
                 exact
@@ -79,7 +80,7 @@ const App = () => {
             <Route
               exact
               path="/delete-services"
-              element={<PrivateRoute />}
+              element={<AdminRoute />}
             >
               <Route
                 exact

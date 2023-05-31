@@ -7,6 +7,7 @@ import {
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import logo from '../assets/images/handymate-logo.png';
 import isAuthenticated from './auth';
+import Admin from './IsAdmin';
 
 const Navbar = ({ sidebarOpen }) => {
   const links = [
@@ -15,7 +16,7 @@ const Navbar = ({ sidebarOpen }) => {
 
   const navigate = useNavigate();
   const isLoggedIn = isAuthenticated();
-  const isAdmin = localStorage.getItem('role') === 'admin';
+  const isAdmin = Admin();
 
   const handleLogout = () => {
     localStorage.clear();
