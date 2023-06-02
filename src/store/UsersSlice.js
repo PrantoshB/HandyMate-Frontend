@@ -22,7 +22,7 @@ export const { setUsers } = userSlice.actions;
 export default userSlice.reducer;
 
 const fetchUsers = () => async (dispatch) => {
-  const response = await fetch('http://localhost:3000/api/v1/users');
+  const response = await fetch('https://handymate-backend-api.onrender.com/api/v1/users');
   const data = await response.json();
   dispatch(setUsers(data));
 };

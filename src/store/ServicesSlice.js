@@ -21,13 +21,13 @@ export const { setServices } = servicesSlice.actions;
 export default servicesSlice.reducer;
 
 const fetchServices = () => async (dispatch) => {
-  const response = await fetch('http://localhost:3000/api/v1/services');
+  const response = await fetch('https://handymate-backend-api.onrender.com/api/v1/services');
   const data = await response.json();
   dispatch(setServices(data));
 };
 
 const addService = (service) => async (dispatch) => {
-  await fetch('http://localhost:3000/api/v1/services', {
+  await fetch('https://handymate-backend-api.onrender.com/api/v1/services', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -38,7 +38,7 @@ const addService = (service) => async (dispatch) => {
 };
 
 const deleteService = (id) => async (dispatch) => {
-  await fetch(`http://localhost:3000/api/v1/services/${id}`, {
+  await fetch(`https://handymate-backend-api.onrender.com/api/v1/services/${id}`, {
     method: 'DELETE',
   });
   dispatch(fetchServices());
